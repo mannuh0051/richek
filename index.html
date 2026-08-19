@@ -9,8 +9,1176 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
-        /* ===== CSS (minified to save space) ===== */
-        *{margin:0;padding:0;box-sizing:border-box}html{font-size:62.5%;scroll-behavior:smooth}body{font-family:'Poppins',sans-serif;font-size:1.5rem;line-height:1.6;color:#2e2a39;background:#f7f7f7;min-height:100vh}.page-width{max-width:120rem;margin:0 auto;padding:0 2rem}:root{--green-dark:#0e8e0e;--green-medium:#199d72;--green-light:#e6f7e6;--green-badge:#0e8e0e;--green-hover:#0a7a0a;--green-bg:#f0faf0;--green:#1f8a3d;--green-pale:#eaf6ec;--muted:#6b7280;--line:#e5e7eb;--bg:#f4f5f4}.announcement-bar{background:#000;color:#fdfbf7;text-align:center;padding:1rem 2rem;font-size:1.3rem;font-weight:500;letter-spacing:.03rem;position:sticky;top:0;z-index:100}.announcement-bar i{margin-right:.6rem}.site-header{background:#f7f7f7;padding:1.2rem 0;border-bottom:1px solid rgba(46,42,57,.06)}.site-header .page-width{display:flex;justify-content:center;align-items:center}.logo{font-size:2.2rem;font-weight:700;letter-spacing:-.02em;color:#2e2a39}.logo i{color:#000;margin-right:.6rem}.page{display:none}.page.active{display:block}#page1{position:relative;transition:filter .4s ease}#page1.blurred{filter:blur(6px) brightness(.7);pointer-events:none;user-select:none}.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;padding:2.4rem 0 1.6rem}.product-gallery{position:sticky;top:2rem}.main-image{background:#fff;border-radius:1.2rem;overflow:hidden;box-shadow:0 .4rem 1.2rem rgba(0,0,0,.04);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:2rem;border:1px solid rgba(0,0,0,.03)}.main-image img{width:100%;height:100%;object-fit:contain}.thumbnail-list{display:flex;gap:1.2rem;margin-top:1.6rem;justify-content:center;flex-wrap:wrap}.thumbnail{width:7.2rem;height:7.2rem;border-radius:.8rem;overflow:hidden;border:2px solid transparent;cursor:pointer;transition:border-color .2s,transform .2s;background:#fff;display:flex;align-items:center;justify-content:center;padding:.4rem;flex:0 0 auto}.thumbnail:hover{transform:scale(1.03)}.thumbnail.active{border-color:var(--green-dark)}.thumbnail img{width:100%;height:100%;object-fit:contain}.product-info{display:flex;flex-direction:column;gap:1.6rem}.product-title h1{font-size:2.8rem;font-weight:600;line-height:1.2;color:#2e2a39;text-align:center}.product-price-row{display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap}.price-current{font-size:2.4rem;font-weight:700;color:var(--green-dark)}.price-compare{font-size:1.8rem;font-weight:400;color:#999;text-decoration:line-through}.badge-sale{background:var(--green-dark);color:#fdfbf7;font-size:1.2rem;font-weight:600;padding:.2rem 1.2rem;border-radius:2rem;letter-spacing:.04rem}.qty-selector{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin:.4rem 0}.qty-option{flex:1;min-width:10rem;max-width:14rem;background:#fff;border:2px solid #e8e8e8;border-radius:1rem;padding:1.2rem .8rem;text-align:center;cursor:pointer;transition:border-color .2s,transform .15s,box-shadow .2s}.qty-option:hover{transform:translateY(-2px);box-shadow:0 .6rem 1.6rem rgba(0,0,0,.06)}.qty-option.active{border-color:var(--green-dark);background:var(--green-light)}.qty-option .qty-label{font-size:1.5rem;font-weight:600;color:#2e2a39}.qty-option .qty-save{font-size:1.2rem;font-weight:600;color:var(--green-dark);display:block;margin-top:.2rem}.qty-option .qty-price{font-size:1.4rem;font-weight:500;color:#555;display:block;margin-top:.2rem}.btn-order{display:inline-block;width:100%;padding:1.6rem 2.4rem;background:var(--green-dark);color:#fff;font-size:1.8rem;font-weight:700;border:none;border-radius:1rem;cursor:pointer;transition:background .2s,transform .15s;text-align:center;letter-spacing:.04rem;margin-top:.4rem}.btn-order:hover{background:var(--green-hover);transform:translateY(-2px)}.btn-order i{margin-right:.8rem}.features-list{display:flex;flex-direction:column;gap:.6rem;margin-top:.4rem}.feature-item{display:flex;align-items:center;gap:1rem;font-size:1.4rem;font-weight:500;color:#2e2a39}.feature-item i{font-size:1.8rem;width:2.4rem;text-align:center;color:var(--green-dark)}.faq-section{padding:4rem 0 2rem;background:#f7f7f7}.faq-section .page-width{max-width:80rem}.faq-title{text-align:center;font-size:2.8rem;font-weight:600;margin-bottom:2.8rem;color:#2e2a39}.accordion{background:#fff;border-radius:1.2rem;margin-bottom:1.2rem;box-shadow:0 .2rem .8rem rgba(0,0,0,.03);border:1px solid rgba(0,0,0,.04);overflow:hidden;transition:box-shadow .2s}.accordion:hover{box-shadow:0 .4rem 1.6rem rgba(0,0,0,.06)}.accordion-summary{display:flex;align-items:center;gap:1.2rem;padding:1.6rem 2rem;cursor:pointer;user-select:none;transition:background .15s}.accordion-summary:hover{background:#fafafa}.accordion-summary i{font-size:1.8rem;color:var(--green-dark);width:2.4rem;text-align:center;flex-shrink:0}.accordion-summary h3{font-size:1.6rem;font-weight:600;color:#2e2a39;flex:1}.accordion-summary .chevron{font-size:1.4rem;color:#888;transition:transform .3s ease;margin-left:auto}.accordion.open .accordion-summary .chevron{transform:rotate(180deg)}.accordion-content{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;padding:0 2rem;color:#444;font-size:1.5rem;line-height:1.7}.accordion.open .accordion-content{max-height:40rem;padding:0 2rem 2rem}.guarantees-section{padding:3.6rem 0 4rem;background:#f7f7f7}.guarantees-title{text-align:center;font-size:2.8rem;font-weight:600;margin-bottom:3.2rem;color:#2e2a39}.guarantees-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2.4rem}.guarantee-card{background:#fff;border-radius:1.2rem;padding:2.4rem 1.6rem;text-align:center;box-shadow:0 .2rem .8rem rgba(0,0,0,.03);border:1px solid rgba(0,0,0,.04);transition:transform .2s,box-shadow .2s}.guarantee-card:hover{transform:translateY(-4px);box-shadow:0 .8rem 2.4rem rgba(0,0,0,.06)}.guarantee-card i{font-size:3.2rem;color:var(--green-dark);margin-bottom:1.2rem}.guarantee-card h3{font-size:1.6rem;font-weight:600;color:#2e2a39;margin-bottom:.6rem}.guarantee-card p{font-size:1.4rem;color:#555;line-height:1.5}.overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);z-index:200;display:none;justify-content:center;align-items:center;padding:2rem;animation:fadeOverlay .35s ease}.overlay.active{display:flex}@keyframes fadeOverlay{0%{opacity:0}100%{opacity:1}}.form-card{max-width:52rem;width:100%;background:#fff;border-radius:1.6rem;padding:3.2rem 3.2rem 2.8rem;box-shadow:0 2.4rem 6rem rgba(0,0,0,.3);animation:slideUp .4s ease;max-height:90vh;overflow-y:auto}@keyframes slideUp{0%{transform:translateY(40px);opacity:0}100%{transform:translateY(0);opacity:1}}.form-title{text-align:center;font-size:2rem;font-weight:600;color:#2e2a39;margin-bottom:2rem}.form-title i{color:var(--green-dark);margin-right:.6rem}.form-qty-grid{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}.form-qty-option{flex:1;min-width:9rem;max-width:13rem;background:#f7f7f7;border:2px solid #e8e8e8;border-radius:1rem;padding:1rem .6rem;text-align:center;cursor:pointer;transition:border-color .2s,transform .15s,background .2s}.form-qty-option:hover{transform:translateY(-2px)}.form-qty-option.active{border-color:var(--green-dark);background:var(--green-light)}.form-qty-option .qty-label{font-size:1.4rem;font-weight:600;color:#2e2a39}.form-qty-option .qty-save{font-size:1.2rem;font-weight:600;color:var(--green-dark);display:block;margin-top:.2rem}.form-qty-option .qty-price{font-size:1.3rem;font-weight:500;color:#555;display:block;margin-top:.2rem}.order-summary{background:#f9f9f9;border-radius:1rem;padding:1.6rem 2rem;margin-bottom:2rem;border:1px solid #eee}.summary-row{display:flex;justify-content:space-between;font-size:1.5rem;padding:.4rem 0;color:#2e2a39}.summary-row.total{font-weight:700;font-size:1.8rem;border-top:2px solid #ddd;padding-top:1rem;margin-top:.4rem;color:var(--green-dark)}.summary-row .label{color:#555}.form-fields{display:flex;flex-direction:column;gap:1.2rem;margin-bottom:2rem}.form-fields .field{display:flex;align-items:center;gap:1.2rem;background:#f7f7f7;border-radius:1rem;padding:0 1.6rem;border:1px solid #e8e8e8;transition:border-color .2s}.form-fields .field:focus-within{border-color:var(--green-dark)}.form-fields .field i{font-size:1.8rem;color:#888;width:2.2rem;text-align:center}.form-fields .field input{width:100%;padding:1.4rem 0;font-family:'Poppins',sans-serif;font-size:1.4rem;border:none;background:transparent;outline:none;color:#2e2a39}.form-fields .field input::placeholder{color:#aaa}.btn-buy-now{display:inline-block;width:100%;padding:1.6rem 2.4rem;background:var(--green-dark);color:#fff;font-size:1.8rem;font-weight:700;border:none;border-radius:1rem;cursor:pointer;transition:background .2s,transform .15s;text-align:center;letter-spacing:.04rem}.btn-buy-now:hover{background:var(--green-hover);transform:translateY(-2px)}.btn-buy-now i{margin-right:.8rem}.back-link{display:inline-block;margin-top:1.6rem;font-size:1.4rem;color:#888;cursor:pointer;transition:color .2s;text-align:center;width:100%}.back-link:hover{color:var(--green-dark)}.back-link i{margin-right:.4rem}.delivery-wrapper{display:flex;justify-content:center;padding:2rem 1.6rem 4rem}.delivery-card{width:100%;max-width:420px;background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}.delivery-header{background:#111;color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:600}.delivery-brand{text-align:center;padding:16px;font-weight:700;font-size:16px;border-bottom:1px solid var(--line)}.delivery-body{padding:20px}.delivery-body h1{font-size:19px;margin:0 0 4px;text-align:center}.delivery-body .sub{text-align:center;color:var(--muted);font-size:13px;margin:0 0 20px}.section-label{font-size:12px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}.pickup-row{display:flex;align-items:flex-start;gap:12px;background:var(--green-pale);border:1px solid #cdeccf;border-radius:12px;padding:14px;margin-bottom:22px;cursor:default}.radio-dot{width:20px;height:20px;border-radius:50%;border:2px solid var(--green);flex:0 0 auto;margin-top:1px;display:flex;align-items:center;justify-content:center}.radio-dot::after{content:"";width:10px;height:10px;background:var(--green);border-radius:50%}.pickup-text strong{display:block;font-size:14px;margin-bottom:2px}.pickup-text span{font-size:13px;color:#3f6b48;line-height:1.4}.region-field{display:flex;align-items:center;gap:10px;background:#f7f7f7;border:1px dashed var(--line);border-radius:10px;padding:13px 14px;font-size:14px;color:var(--muted);margin-bottom:22px;min-height:46px;transition:background .2s,color .2s,border-color .2s}.region-field.filled{background:var(--green-pale);border:1px solid #cdeccf;color:var(--green-dark);font-weight:600}.region-field svg{flex:0 0 auto}label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}select{width:100%;appearance:none;-webkit-appearance:none;padding:13px 40px 13px 14px;font-size:15px;border:1px solid var(--line);border-radius:10px;background:#fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%236b7280" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>') no-repeat right 14px center;color:var(--ink);margin-bottom:18px;font-family:inherit}select:focus{outline:2px solid var(--green);outline-offset:1px}.summary{border-top:1px solid var(--line);padding-top:14px;margin-bottom:18px}.row{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);margin-bottom:6px}.row.total{color:var(--ink);font-weight:700;font-size:16px;margin-top:10px}.row.total .amount{color:var(--green-dark)}button.confirm{width:100%;background:var(--green);color:#fff;border:none;border-radius:10px;padding:15px;font-size:15px;font-weight:700;cursor:pointer;transition:background .15s}button.confirm:disabled{background:#b9d9bf;cursor:not-allowed}button.confirm:not(:disabled):hover{background:var(--green-dark)}.back{display:block;text-align:center;margin-top:14px;font-size:13px;color:var(--muted);text-decoration:none;cursor:pointer}.back:hover{color:var(--green-dark)}.note{font-size:11.5px;color:#9ca3af;text-align:center;margin-top:16px;line-height:1.5}#stkDeliveryStatus{margin-top:12px;padding:10px 12px;border-radius:8px;font-size:13px;display:none;font-weight:500}#stkDeliveryStatus.pending{display:block;background:#fff8e1;color:#e65100}#stkDeliveryStatus.success{display:block;background:#e8f5e9;color:#2e7d32}#stkDeliveryStatus.error{display:block;background:#fce4ec;color:#c62828}.site-footer{background:#000;color:#fdfbf7;padding:2rem 0;text-align:center;font-size:1.4rem;margin-top:2.4rem}.site-footer small{opacity:.7}@media(max-width:900px){.product-grid{grid-template-columns:1fr;gap:2.4rem}.product-gallery{position:relative;top:0}.product-title h1{font-size:2.2rem}.form-card{padding:2.4rem 1.6rem;margin:1rem}.guarantees-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:550px){.thumbnail{width:5.6rem;height:5.6rem}.price-current{font-size:2rem}.btn-order,.btn-buy-now,button.confirm{font-size:1.6rem;padding:1.4rem 2rem}.form-title,.delivery-body h1,.faq-title,.guarantees-title{font-size:1.8rem}.qty-option,.form-qty-option{min-width:8rem;padding:1rem .6rem}.qty-option .qty-label,.form-qty-option .qty-label{font-size:1.3rem}.overlay{padding:1rem}.delivery-card{border-radius:12px}.delivery-body{padding:16px}.guarantees-grid{grid-template-columns:1fr}}.text-center{text-align:center}.hidden{display:none!important}.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:5000;display:none;align-items:center;justify-content:center;padding:20px}.modal-overlay.open{display:flex}.stk-waiting-box{background:#fff;border-radius:24px;padding:32px 24px;max-width:400px;width:100%;text-align:center;animation:fadeIn .3s ease}.stk-waiting-box .pulse-icon{width:72px;height:72px;border:6px solid #e0e0e0;border-top-color:var(--green-dark);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 20px}.stk-waiting-box .title{font-size:1.2rem;font-weight:800;color:#1a2f4f;margin-bottom:8px}.stk-waiting-box .sub{font-size:.9rem;color:#333;margin-bottom:6px}.stk-waiting-box .dots{display:flex;justify-content:center;gap:8px;margin:20px 0}.stk-waiting-box .dots span{width:10px;height:10px;background:#0a66c2;border-radius:50%;animation:procDotPulse 1.2s infinite ease-in-out both}.stk-waiting-box .dots span:nth-child(1){animation-delay:-.32s}.stk-waiting-box .dots span:nth-child(2){animation-delay:-.16s}@keyframes procDotPulse{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes fadeIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: #2e2a39;
+            background: #f7f7f7;
+            min-height: 100vh;
+        }
+        .page-width {
+            max-width: 120rem;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        :root {
+            --green-dark: #0e8e0e;
+            --green-medium: #199d72;
+            --green-light: #e6f7e6;
+            --green-hover: #0a7a0a;
+            --green: #1f8a3d;
+            --green-pale: #eaf6ec;
+            --muted: #6b7280;
+            --line: #e5e7eb;
+        }
+        .announcement-bar {
+            background: #000;
+            color: #fdfbf7;
+            text-align: center;
+            padding: 1rem 2rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .site-header {
+            background: #f7f7f7;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(46, 42, 57, .06);
+        }
+        .site-header .page-width {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2e2a39;
+        }
+        .logo i {
+            color: #000;
+            margin-right: 0.6rem;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        #page1 {
+            position: relative;
+            transition: filter .4s ease;
+        }
+        #page1.blurred {
+            filter: blur(6px) brightness(.7);
+            pointer-events: none;
+            user-select: none;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            padding: 2.4rem 0 1.6rem;
+        }
+        .product-gallery {
+            position: sticky;
+            top: 2rem;
+        }
+        .main-image {
+            background: #fff;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 .4rem 1.2rem rgba(0, 0, 0, .04);
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            border: 1px solid rgba(0, 0, 0, .03);
+        }
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .thumbnail-list {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1.6rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .thumbnail {
+            width: 7.2rem;
+            height: 7.2rem;
+            border-radius: .8rem;
+            overflow: hidden;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: border-color .2s, transform .2s;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: .4rem;
+            flex: 0 0 auto;
+        }
+        .thumbnail:hover {
+            transform: scale(1.03);
+        }
+        .thumbnail.active {
+            border-color: var(--green-dark);
+        }
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+        .product-title h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #2e2a39;
+            text-align: center;
+        }
+        .product-price-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .price-current {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--green-dark);
+        }
+        .price-compare {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #999;
+            text-decoration: line-through;
+        }
+        .badge-sale {
+            background: var(--green-dark);
+            color: #fdfbf7;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: .2rem 1.2rem;
+            border-radius: 2rem;
+        }
+        .qty-selector {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: .4rem 0;
+        }
+        .qty-option {
+            flex: 1;
+            min-width: 10rem;
+            max-width: 14rem;
+            background: #fff;
+            border: 2px solid #e8e8e8;
+            border-radius: 1rem;
+            padding: 1.2rem .8rem;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color .2s, transform .15s, box-shadow .2s;
+        }
+        .qty-option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 .6rem 1.6rem rgba(0, 0, 0, .06);
+        }
+        .qty-option.active {
+            border-color: var(--green-dark);
+            background: var(--green-light);
+        }
+        .qty-option .qty-label {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2e2a39;
+        }
+        .qty-option .qty-save {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--green-dark);
+            display: block;
+            margin-top: .2rem;
+        }
+        .qty-option .qty-price {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #555;
+            display: block;
+            margin-top: .2rem;
+        }
+        .btn-order {
+            display: inline-block;
+            width: 100%;
+            padding: 1.6rem 2.4rem;
+            background: var(--green-dark);
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: background .2s, transform .15s;
+            text-align: center;
+            margin-top: .4rem;
+        }
+        .btn-order:hover {
+            background: var(--green-hover);
+            transform: translateY(-2px);
+        }
+        .btn-order i {
+            margin-right: .8rem;
+        }
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: .6rem;
+            margin-top: .4rem;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #2e2a39;
+        }
+        .feature-item i {
+            font-size: 1.8rem;
+            width: 2.4rem;
+            text-align: center;
+            color: var(--green-dark);
+        }
+        .faq-section {
+            padding: 4rem 0 2rem;
+            background: #f7f7f7;
+        }
+        .faq-section .page-width {
+            max-width: 80rem;
+        }
+        .faq-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 2.8rem;
+            color: #2e2a39;
+        }
+        .accordion {
+            background: #fff;
+            border-radius: 1.2rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 .2rem .8rem rgba(0, 0, 0, .03);
+            border: 1px solid rgba(0, 0, 0, .04);
+            overflow: hidden;
+        }
+        .accordion-summary {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.6rem 2rem;
+            cursor: pointer;
+            user-select: none;
+            transition: background .15s;
+        }
+        .accordion-summary:hover {
+            background: #fafafa;
+        }
+        .accordion-summary i {
+            font-size: 1.8rem;
+            color: var(--green-dark);
+            width: 2.4rem;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .accordion-summary h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #2e2a39;
+            flex: 1;
+        }
+        .accordion-summary .chevron {
+            font-size: 1.4rem;
+            color: #888;
+            transition: transform .3s ease;
+            margin-left: auto;
+        }
+        .accordion.open .accordion-summary .chevron {
+            transform: rotate(180deg);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .35s ease, padding .3s ease;
+            padding: 0 2rem;
+            color: #444;
+            font-size: 1.5rem;
+            line-height: 1.7;
+        }
+        .accordion.open .accordion-content {
+            max-height: 40rem;
+            padding: 0 2rem 2rem;
+        }
+        .guarantees-section {
+            padding: 3.6rem 0 4rem;
+            background: #f7f7f7;
+        }
+        .guarantees-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 3.2rem;
+            color: #2e2a39;
+        }
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.4rem;
+        }
+        .guarantee-card {
+            background: #fff;
+            border-radius: 1.2rem;
+            padding: 2.4rem 1.6rem;
+            text-align: center;
+            box-shadow: 0 .2rem .8rem rgba(0, 0, 0, .03);
+            border: 1px solid rgba(0, 0, 0, .04);
+            transition: transform .2s, box-shadow .2s;
+        }
+        .guarantee-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 .8rem 2.4rem rgba(0, 0, 0, .06);
+        }
+        .guarantee-card i {
+            font-size: 3.2rem;
+            color: var(--green-dark);
+            margin-bottom: 1.2rem;
+        }
+        .guarantee-card h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #2e2a39;
+            margin-bottom: .6rem;
+        }
+        .guarantee-card p {
+            font-size: 1.4rem;
+            color: #555;
+            line-height: 1.5;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .55);
+            backdrop-filter: blur(4px);
+            z-index: 200;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            animation: fadeOverlay .35s ease;
+        }
+        .overlay.active {
+            display: flex;
+        }
+        @keyframes fadeOverlay {
+            0% {
+                opacity: 0
+            }
+            100% {
+                opacity: 1
+            }
+        }
+        .form-card {
+            max-width: 52rem;
+            width: 100%;
+            background: #fff;
+            border-radius: 1.6rem;
+            padding: 3.2rem 3.2rem 2.8rem;
+            box-shadow: 0 2.4rem 6rem rgba(0, 0, 0, .3);
+            animation: slideUp .4s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        @keyframes slideUp {
+            0% {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .form-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2e2a39;
+            margin-bottom: 2rem;
+        }
+        .form-title i {
+            color: var(--green-dark);
+            margin-right: .6rem;
+        }
+        .form-qty-grid {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .form-qty-option {
+            flex: 1;
+            min-width: 9rem;
+            max-width: 13rem;
+            background: #f7f7f7;
+            border: 2px solid #e8e8e8;
+            border-radius: 1rem;
+            padding: 1rem .6rem;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color .2s, transform .15s, background .2s;
+        }
+        .form-qty-option:hover {
+            transform: translateY(-2px);
+        }
+        .form-qty-option.active {
+            border-color: var(--green-dark);
+            background: var(--green-light);
+        }
+        .form-qty-option .qty-label {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2e2a39;
+        }
+        .form-qty-option .qty-save {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--green-dark);
+            display: block;
+            margin-top: .2rem;
+        }
+        .form-qty-option .qty-price {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #555;
+            display: block;
+            margin-top: .2rem;
+        }
+        .order-summary {
+            background: #f9f9f9;
+            border-radius: 1rem;
+            padding: 1.6rem 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #eee;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.5rem;
+            padding: .4rem 0;
+            color: #2e2a39;
+        }
+        .summary-row.total {
+            font-weight: 700;
+            font-size: 1.8rem;
+            border-top: 2px solid #ddd;
+            padding-top: 1rem;
+            margin-top: .4rem;
+            color: var(--green-dark);
+        }
+        .summary-row .label {
+            color: #555;
+        }
+        .form-fields {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .form-fields .field {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            background: #f7f7f7;
+            border-radius: 1rem;
+            padding: 0 1.6rem;
+            border: 1px solid #e8e8e8;
+            transition: border-color .2s;
+        }
+        .form-fields .field:focus-within {
+            border-color: var(--green-dark);
+        }
+        .form-fields .field i {
+            font-size: 1.8rem;
+            color: #888;
+            width: 2.2rem;
+            text-align: center;
+        }
+        .form-fields .field input {
+            width: 100%;
+            padding: 1.4rem 0;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            border: none;
+            background: transparent;
+            outline: none;
+            color: #2e2a39;
+        }
+        .form-fields .field input::placeholder {
+            color: #aaa;
+        }
+        .btn-buy-now {
+            display: inline-block;
+            width: 100%;
+            padding: 1.6rem 2.4rem;
+            background: var(--green-dark);
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: background .2s, transform .15s;
+            text-align: center;
+        }
+        .btn-buy-now:hover {
+            background: var(--green-hover);
+            transform: translateY(-2px);
+        }
+        .btn-buy-now i {
+            margin-right: .8rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 1.6rem;
+            font-size: 1.4rem;
+            color: #888;
+            cursor: pointer;
+            transition: color .2s;
+            text-align: center;
+            width: 100%;
+        }
+        .back-link:hover {
+            color: var(--green-dark);
+        }
+        .back-link i {
+            margin-right: .4rem;
+        }
+        .delivery-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1.6rem 4rem;
+        }
+        .delivery-card {
+            width: 100%;
+            max-width: 420px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
+            overflow: hidden;
+        }
+        .delivery-header {
+            background: #111;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .delivery-brand {
+            text-align: center;
+            padding: 16px;
+            font-weight: 700;
+            font-size: 16px;
+            border-bottom: 1px solid var(--line);
+        }
+        .delivery-body {
+            padding: 20px;
+        }
+        .delivery-body h1 {
+            font-size: 19px;
+            margin: 0 0 4px;
+            text-align: center;
+        }
+        .delivery-body .sub {
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            margin: 0 0 20px;
+        }
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .03em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin: 0 0 8px;
+        }
+        .pickup-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: var(--green-pale);
+            border: 1px solid #cdeccf;
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 22px;
+            cursor: default;
+        }
+        .radio-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid var(--green);
+            flex: 0 0 auto;
+            margin-top: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .radio-dot::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: var(--green);
+            border-radius: 50%;
+        }
+        .pickup-text strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+        .pickup-text span {
+            font-size: 13px;
+            color: #3f6b48;
+            line-height: 1.4;
+        }
+        .region-field {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f7f7f7;
+            border: 1px dashed var(--line);
+            border-radius: 10px;
+            padding: 13px 14px;
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 22px;
+            min-height: 46px;
+            transition: background .2s, color .2s, border-color .2s;
+        }
+        .region-field.filled {
+            background: var(--green-pale);
+            border: 1px solid #cdeccf;
+            color: var(--green-dark);
+            font-weight: 600;
+        }
+        .region-field svg {
+            flex: 0 0 auto;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        select {
+            width: 100%;
+            appearance: none;
+            -webkit-appearance: none;
+            padding: 13px 40px 13px 14px;
+            font-size: 15px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%236b7280" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>') no-repeat right 14px center;
+            color: var(--ink);
+            margin-bottom: 18px;
+            font-family: inherit;
+        }
+        select:focus {
+            outline: 2px solid var(--green);
+            outline-offset: 1px;
+        }
+        .summary {
+            border-top: 1px solid var(--line);
+            padding-top: 14px;
+            margin-bottom: 18px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+        .row.total {
+            color: var(--ink);
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .row.total .amount {
+            color: var(--green-dark);
+        }
+        button.confirm {
+            width: 100%;
+            background: var(--green);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .15s;
+        }
+        button.confirm:disabled {
+            background: #b9d9bf;
+            cursor: not-allowed;
+        }
+        button.confirm:not(:disabled):hover {
+            background: var(--green-dark);
+        }
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 14px;
+            font-size: 13px;
+            color: var(--muted);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .back:hover {
+            color: var(--green-dark);
+        }
+        .note {
+            font-size: 11.5px;
+            color: #9ca3af;
+            text-align: center;
+            margin-top: 16px;
+            line-height: 1.5;
+        }
+        #stkDeliveryStatus {
+            margin-top: 12px;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            display: none;
+            font-weight: 500;
+        }
+        #stkDeliveryStatus.pending {
+            display: block;
+            background: #fff8e1;
+            color: #e65100;
+        }
+        #stkDeliveryStatus.success {
+            display: block;
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        #stkDeliveryStatus.error {
+            display: block;
+            background: #fce4ec;
+            color: #c62828;
+        }
+        .site-footer {
+            background: #000;
+            color: #fdfbf7;
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 1.4rem;
+            margin-top: 2.4rem;
+        }
+        .site-footer small {
+            opacity: .7;
+        }
+        @media(max-width:900px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 2.4rem;
+            }
+            .product-gallery {
+                position: relative;
+                top: 0;
+            }
+            .product-title h1 {
+                font-size: 2.2rem;
+            }
+            .form-card {
+                padding: 2.4rem 1.6rem;
+                margin: 1rem;
+            }
+            .guarantees-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media(max-width:550px) {
+            .thumbnail {
+                width: 5.6rem;
+                height: 5.6rem;
+            }
+            .price-current {
+                font-size: 2rem;
+            }
+            .btn-order,
+            .btn-buy-now,
+            button.confirm {
+                font-size: 1.6rem;
+                padding: 1.4rem 2rem;
+            }
+            .form-title,
+            .delivery-body h1,
+            .faq-title,
+            .guarantees-title {
+                font-size: 1.8rem;
+            }
+            .qty-option,
+            .form-qty-option {
+                min-width: 8rem;
+                padding: 1rem .6rem;
+            }
+            .qty-option .qty-label,
+            .form-qty-option .qty-label {
+                font-size: 1.3rem;
+            }
+            .overlay {
+                padding: 1rem;
+            }
+            .delivery-card {
+                border-radius: 12px;
+            }
+            .delivery-body {
+                padding: 16px;
+            }
+            .guarantees-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .text-center {
+            text-align: center;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .7);
+            backdrop-filter: blur(8px);
+            z-index: 5000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-overlay.open {
+            display: flex;
+        }
+        .stk-waiting-box {
+            background: #fff;
+            border-radius: 24px;
+            padding: 32px 24px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn .3s ease;
+        }
+        .stk-waiting-box .pulse-icon {
+            width: 72px;
+            height: 72px;
+            border: 6px solid #e0e0e0;
+            border-top-color: var(--green-dark);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        .stk-waiting-box .title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #1a2f4f;
+            margin-bottom: 8px;
+        }
+        .stk-waiting-box .sub {
+            font-size: .9rem;
+            color: #333;
+            margin-bottom: 6px;
+        }
+        .stk-waiting-box .dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 20px 0;
+        }
+        .stk-waiting-box .dots span {
+            width: 10px;
+            height: 10px;
+            background: #0a66c2;
+            border-radius: 50%;
+            animation: procDotPulse 1.2s infinite ease-in-out both;
+        }
+        .stk-waiting-box .dots span:nth-child(1) {
+            animation-delay: -.32s;
+        }
+        .stk-waiting-box .dots span:nth-child(2) {
+            animation-delay: -.16s;
+        }
+        @keyframes procDotPulse {
+            0%,
+            80%,
+            100% {
+                transform: scale(0)
+            }
+            40% {
+                transform: scale(1)
+            }
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(.95)
+            }
+            to {
+                opacity: 1;
+                transform: scale(1)
+            }
+        }
+
+        /* ===== TRACKING SECTION (NEW) ===== */
+        #trackingSection {
+            display: none;
+            padding: 2rem 0 4rem;
+            background: #f7f7f7;
+        }
+        #trackingSection.visible {
+            display: block;
+        }
+        .tracking-card {
+            max-width: 520px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 16px;
+            padding: 2.4rem 2.4rem 3.2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e5e7eb;
+        }
+        .tracking-card .tracking-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--green-dark);
+            margin-bottom: 0.4rem;
+        }
+        .tracking-card .tracking-sub {
+            text-align: center;
+            color: var(--muted);
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+        }
+        .tracking-card .order-summary-box {
+            background: #f8faf8;
+            border-radius: 10px;
+            padding: 1.4rem 1.6rem;
+            margin-bottom: 1.8rem;
+            border-left: 4px solid var(--green-dark);
+        }
+        .tracking-card .order-summary-box .line {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.35rem;
+            padding: 0.2rem 0;
+            color: #2e2a39;
+        }
+        .tracking-card .order-summary-box .line .label {
+            color: var(--muted);
+        }
+        .tracking-card .order-summary-box .line.total {
+            font-weight: 700;
+            font-size: 1.6rem;
+            border-top: 1px solid #ddd;
+            padding-top: 0.8rem;
+            margin-top: 0.4rem;
+        }
+        .tracking-card .tracking-form-fields {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin: 1.8rem 0 1.6rem;
+        }
+        .tracking-card .tracking-form-fields .field {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            background: #f7f7f7;
+            border-radius: 1rem;
+            padding: 0 1.6rem;
+            border: 1px solid #e8e8e8;
+            transition: border-color .2s;
+        }
+        .tracking-card .tracking-form-fields .field:focus-within {
+            border-color: var(--green-dark);
+        }
+        .tracking-card .tracking-form-fields .field i {
+            font-size: 1.6rem;
+            color: #888;
+            width: 2rem;
+            text-align: center;
+        }
+        .tracking-card .tracking-form-fields .field input,
+        .tracking-card .tracking-form-fields .field textarea {
+            width: 100%;
+            padding: 1.2rem 0;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            border: none;
+            background: transparent;
+            outline: none;
+            color: #2e2a39;
+            resize: vertical;
+        }
+        .tracking-card .tracking-form-fields .field textarea {
+            min-height: 6rem;
+            padding: 0.8rem 0;
+        }
+        .tracking-card .tracking-form-fields .field input::placeholder,
+        .tracking-card .tracking-form-fields .field textarea::placeholder {
+            color: #aaa;
+        }
+        .tracking-card .delivery-estimate {
+            background: #eaf6ec;
+            border-radius: 10px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.6rem 0 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            border: 1px solid #cdeccf;
+        }
+        .tracking-card .delivery-estimate i {
+            font-size: 2.4rem;
+            color: var(--green-dark);
+        }
+        .tracking-card .delivery-estimate .est-text {
+            font-size: 1.35rem;
+            color: #2e2a39;
+        }
+        .tracking-card .delivery-estimate .est-text strong {
+            color: var(--green-dark);
+        }
+        .tracking-card .tracking-status {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.2rem 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            margin: 1.6rem 0;
+            font-size: 1.3rem;
+        }
+        .tracking-card .tracking-status .status-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--muted);
+        }
+        .tracking-card .tracking-status .status-item.active {
+            color: var(--green-dark);
+            font-weight: 600;
+        }
+        .tracking-card .tracking-status .status-item .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ddd;
+        }
+        .tracking-card .tracking-status .status-item.active .dot {
+            background: var(--green-dark);
+            box-shadow: 0 0 0 3px rgba(14, 142, 14, 0.2);
+        }
+        .btn-track {
+            display: inline-block;
+            width: 100%;
+            padding: 1.4rem;
+            background: var(--green-dark);
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: background .2s, transform .15s;
+            text-align: center;
+            margin-top: 0.8rem;
+        }
+        .btn-track:hover {
+            background: var(--green-hover);
+            transform: translateY(-2px);
+        }
+        .btn-track:disabled {
+            background: #b9d9bf;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .btn-track i {
+            margin-right: 0.6rem;
+        }
+        .tracking-card .tracking-note {
+            font-size: 1.1rem;
+            color: #9ca3af;
+            text-align: center;
+            margin-top: 1.2rem;
+            line-height: 1.5;
+        }
+
+        @media(max-width:550px) {
+            .tracking-card {
+                padding: 1.6rem;
+            }
+            .tracking-card .tracking-title {
+                font-size: 1.6rem;
+            }
+            .tracking-card .tracking-status {
+                flex-wrap: wrap;
+                gap: 0.8rem;
+            }
+            .tracking-card .tracking-status .status-item {
+                flex: 1;
+                min-width: 6rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -155,6 +1323,64 @@
         </div>
     </div>
 
+    <!-- ===== TRACKING SECTION (NEW) ===== -->
+    <div id="trackingSection">
+        <div class="page-width">
+            <div class="tracking-card">
+                <div class="tracking-title"><i class="fas fa-box"></i> Track My Order</div>
+                <div class="tracking-sub">Stay updated on your order status</div>
+
+                <!-- Order Summary -->
+                <div class="order-summary-box" id="trackOrderSummary">
+                    <div class="line"><span class="label">Product</span><span>Prime Shilajit™</span></div>
+                    <div class="line"><span class="label">Quantity</span><span id="trackQty">1 Unit</span></div>
+                    <div class="line"><span class="label">Total Paid</span><span id="trackTotal">KSh 450.00</span></div>
+                    <div class="line"><span class="label">County</span><span id="trackCounty">—</span></div>
+                    <div class="line total"><span class="label">Status</span><span style="color:var(--green-dark);">✅ Paid & Confirmed</span></div>
+                </div>
+
+                <!-- Delivery Estimate -->
+                <div class="delivery-estimate" id="deliveryEstimateBox">
+                    <i class="fas fa-truck-fast"></i>
+                    <div class="est-text">
+                        <strong id="deliveryEstimateText">Delivery Estimate: Tomorrow</strong><br />
+                        <span id="deliveryDetailText">Your order will be ready for pickup at our office.</span>
+                    </div>
+                </div>
+
+                <!-- Tracking Status Steps -->
+                <div class="tracking-status">
+                    <div class="status-item active">
+                        <span class="dot"></span>
+                        <span>Order Placed</span>
+                    </div>
+                    <div class="status-item active">
+                        <span class="dot"></span>
+                        <span>Payment Confirmed</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="dot"></span>
+                        <span>Processing</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="dot"></span>
+                        <span>Ready for Pickup</span>
+                    </div>
+                </div>
+
+                <!-- Tracking Form -->
+                <div class="tracking-form-fields" id="trackingForm">
+                    <div class="field"><i class="fas fa-envelope"></i><input type="email" id="trackEmail" placeholder="Email address (for order updates)" /></div>
+                    <div class="field"><i class="fas fa-map-pin"></i><input type="text" id="trackAddress" placeholder="Delivery address (optional)" /></div>
+                    <div class="field"><i class="fas fa-comment"></i><textarea id="trackNotes" placeholder="Additional notes or instructions (optional)"></textarea></div>
+                </div>
+
+                <button class="btn-track" id="trackBtn" disabled><i class="fas fa-search"></i> Track My Order</button>
+                <p class="tracking-note">📬 We'll send order updates to your email. Your details are kept private.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- STK WAITING OVERLAY -->
     <div class="modal-overlay" id="stkWaitingOverlay">
         <div class="stk-waiting-box">
@@ -171,9 +1397,433 @@
         <div class="page-width"><small>&copy; 2026, <a href="#" style="color:#fdfbf7;opacity:0.8;">Mike Sonko Foundation</a></small></div>
     </footer>
 
-    <!-- ===== JAVASCRIPT (Minified but fully functional) ===== -->
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
-        !function(){let e=document.getElementById("page1"),t=document.getElementById("formOverlay"),o=document.getElementById("page3");function n(e){document.querySelectorAll(".page").forEach(t=>t.classList.remove("active")),document.getElementById(e).classList.add("active"),window.scrollTo({top:0,behavior:"smooth"})}function a(){t.classList.add("active"),e.classList.add("blurred"),document.body.style.overflow="hidden"}function r(){t.classList.remove("active"),e.classList.remove("blurred"),document.body.style.overflow=""}function d(e){let t=e.replace(/\D/g,"");return t.startsWith("0")&&(t="254"+t.slice(1)),t.startsWith("254")||(t="254"+t),t}function s(e){return"string"==typeof e?e:e&&e.error?"string"==typeof e.error?e.error:JSON.stringify(e.error):e&&e.message?e.message:"Request failed"}function c(e){return"KSh "+Number(e).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,",")}function l(e,o,n){F=e,k=o,S=n, document.getElementById("page1Price").textContent=c(o),document.getElementById("page1Compare").textContent=c(n),document.getElementById("summarySubtotal").textContent=c(o),document.getElementById("summaryShipping").textContent="Free",document.getElementById("summaryTotal").textContent=c(o),document.getElementById("buyNowPrice").textContent=c(o),document.getElementById("deliverySubtotal").textContent=c(o),document.getElementById("deliveryTotal").textContent=c(o)}let m=document.querySelectorAll("#page1QtySelector .qty-option"),g=document.querySelectorAll("#page2QtySelector .form-qty-option"),F=1,k=450,S=999;m.forEach(e=>{e.addEventListener("click",function(){m.forEach(e=>e.classList.remove("active")),this.classList.add("active");let t=parseInt(this.dataset.qty),o=parseInt(this.dataset.price),n=parseInt(this.dataset.compare);g.forEach(e=>{e.classList.toggle("active",parseInt(e.dataset.qty)===t)}),l(t,o,n)})}),g.forEach(e=>{e.addEventListener("click",function(){g.forEach(e=>e.classList.remove("active")),this.classList.add("active");let t=parseInt(this.dataset.qty),o=parseInt(this.dataset.price),n=parseInt(this.dataset.compare);m.forEach(e=>{e.classList.toggle("active",parseInt(e.dataset.qty)===t)}),l(t,o,n)})}),document.getElementById("orderNowBtn").addEventListener("click",a),document.getElementById("closeForm").addEventListener("click",r),t.addEventListener("click",function(e){e.target===this&&r()}),document.addEventListener("keydown",function(e){"Escape"===e.key&&t.classList.contains("active")&&r()});let p=document.getElementById("buyNowBtn"),v=document.getElementById("fullName"),b=document.getElementById("phoneNumber"),w=document.getElementById("whatsappNumber"),h=document.getElementById("county"),y=document.getElementById("pickupDetail"),C=document.getElementById("regionField"),E=document.getElementById("regionText"),_=document.getElementById("confirmBtn"),L=document.getElementById("deliverySubtotal"),P=document.getElementById("deliveryTotal"),D=document.getElementById("stkDeliveryStatus"),A=document.getElementById("stkWaitingOverlay"),B=document.getElementById("backToForm"),q={Mombasa:"City Mall Nyali",Kwale:"The Diani Beach Shopping Centre",Kilifi:"Kilifi Plantation","Tana River":"Hola Market",Lamu:"Manda Bay Resort","Taita Taveta":"Voi Safari Lodge",Garissa:"Garissa Plaza",Wajir:"Wajir Mall",Mandera:"Mandera County Referral Hospital",Marsabit:"Marsabit Plaza",Isiolo:"Isiolo Tourist Hotel",Meru:"Green Square Mall","Tharaka Nithi":"Chuka University",Embu:"Embu Mall",Kitui:"Kitui County Referral Hospital",Machakos:"Garden Hotel",Makueni:"Wote Green Square",Nyandarua:"Nyandarua County Referral Hospital",Nyeri:"Prestige Plaza Nyeri",Kirinyaga:"Kerugoya Level 5 Hospital","Murang'a":"Thika Greens / Murang'a Mall",Kiambu:"Quickmart Ruiru",Turkana:"Lodwar Town Centre","West Pokot":"Kapenguria County Referral Hospital",Samburu:"Maralal Safari Lodge","Trans Nzoia":"Kitale Mall","Uasin Gishu":"Rupa's Mall","Elgeyo Marakwet":"Iten County Referral Hospital",Nandi:"Kapsabet Mall",Baringo:"Kabarnet Hotel",Laikipia:"Nanyuki Mall",Nakuru:"Westside Mall",Narok:"Narok Town Mall",Kajiado:"Kajiado County Referral Hospital",Kericho:"Tuskys / Kericho Green Square area",Bomet:"Bomet Green Stadium area / businesses",Kakamega:"Kakamega Mall",Vihiga:"Vihiga County Referral Hospital",Bungoma:"Bungoma County Referral Hospital",Busia:"Busia Mall",Siaya:"Siaya County Referral Hospital",Kisumu:"Kisumu City Mall","Homa Bay":"Homa Bay County Referral Hospital",Migori:"Migori County Referral Hospital",Kisii:"Kisii Teaching & Referral Hospital",Nyamira:"Nyamira County Referral Hospital",Nairobi:"Odeon"};let x={name:"",phone:"",whatsapp:""},O="";p.addEventListener("click",function(){let e=v.value.trim(),t=b.value.trim(),o=w.value.trim();if(!e)return void alert("Please enter your full name.");if(!t)return void alert("Please enter your phone number for M-PESA STK.");if(!o)return void alert("Please enter your WhatsApp number.");x.name=e,x.phone=t,x.whatsapp=o,r(),n("page3"),h.value="",y.textContent="Delivery is free. We'll route your order to the office nearest your county — no home address or location sharing required.",E.textContent="Select a county to see region",C.classList.remove("filled"),_.disabled=!0,O="",D.className="",D.style.display="none",D.textContent=""}),B.addEventListener("click",function(){n("page1"),setTimeout(a,300)}),h.addEventListener("change",function(){let e=h.value;if(e){let t=h.selectedOptions[0].closest("optgroup"),o=t?t.label:"",n=q[e]||"[landmark TBD]";y.textContent="Our office next to "+n+", "+e+".",E.textContent=o,C.classList.add("filled"),_.disabled=!1,O=e}else y.textContent="Delivery is free. We'll route your order to the office nearest your county — no home address or location sharing required.",E.textContent="Select a county to see region",C.classList.remove("filled"),_.disabled=!0,O=""});let T=document.querySelectorAll(".accordion-summary");T.forEach(e=>{e.addEventListener("click",function(){this.closest(".accordion").classList.toggle("open")})});let M=document.querySelectorAll(".thumbnail"),z=document.getElementById("mainImage");M.forEach(e=>{e.addEventListener("click",function(){M.forEach(e=>e.classList.remove("active")),this.classList.add("active"),z.src=this.dataset.img})}),document.querySelectorAll(".form-fields input").forEach(e=>{e.addEventListener("keydown",function(e){"Enter"===e.key&&p.click()})}),_.addEventListener("click",function(){if(!O)return void alert("Please select your county.");let e=x.name,t=x.phone,o=x.whatsapp,n=F;A.style.display="flex",D.className="pending",D.style.display="block",D.textContent="⏳ Sending STK push...",_.disabled=!0;let l="SHILAJIT-"+Date.now(),s={phone:d(t),amount:n,reference:l,channelId:"PAYL-4SGHZQ"};fetch("/api/stk-push",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(s)}).then(e=>{if(!e.ok)throw new Error("STK push request failed");return e.json()}).then(e=>{let t=e.transactionId||e.reference||e.transaction_id;if(!t)throw new Error("No transaction ID returned");D.textContent="⏳ Waiting for your M-PESA PIN...";let o=Date.now(),n=6e4;return new Promise((a,r)=>{!function l(){if(Date.now()-o>=n)return void r(new Error("Transaction timed out"));fetch("/api/status?id="+encodeURIComponent(t)).then(e=>{if(!e.ok)throw new Error("Status check failed");return e.json()}).then(e=>{"COMPLETED"===e.status?a(e):"FAILED"===e.status||"CANCELLED"===e.status?console.log("Payment failed"):setTimeout(l,2e3)}).catch(e=>{r(e)})}()})}).then(()=>{A.style.display="none",D.className="success",D.textContent="✅ Payment confirmed! Order placed.";let e=h.selectedOptions[0].closest("optgroup"),t=e?e.label:"",o="✅ Order Confirmed!\n\nProduct: Prime Shilajit™ – Vitality Formula\nQuantity: "+F+" Unit"+(F>1?"s":"")+"\nTotal: "+c(n)+"\n\n📍 Pickup Details:\nCounty: "+O+"\nRegion: "+t+"\nOffice: "+y.textContent+"\n\n👤 Customer: "+e+"\n📞 Phone: "+t+"\n💬 WhatsApp: "+o;alert(o),n("page1"),v.value="",b.value="",w.value="",h.value="",y.textContent="Delivery is free. We'll route your order to the office nearest your county — no home address or location sharing required.",E.textContent="Select a county to see region",C.classList.remove("filled"),_.disabled=!0,O="",D.className="",D.style.display="none",D.textContent=""}).catch(e=>{A.style.display="none",D.className="error",D.textContent="❌ "+s(e),_.disabled=!1})}),l(1,450,999)}();
+        (function() {
+            // ===== DOM REFS =====
+            const page1 = document.getElementById('page1');
+            const formOverlay = document.getElementById('formOverlay');
+            const page3 = document.getElementById('page3');
+            const trackingSection = document.getElementById('trackingSection');
+
+            const orderNowBtn = document.getElementById('orderNowBtn');
+            const closeFormBtn = document.getElementById('closeForm');
+            const buyNowBtn = document.getElementById('buyNowBtn');
+
+            const fullName = document.getElementById('fullName');
+            const phoneNumber = document.getElementById('phoneNumber');
+            const whatsappNumber = document.getElementById('whatsappNumber');
+            const countySelect = document.getElementById('county');
+            const pickupDetail = document.getElementById('pickupDetail');
+            const regionField = document.getElementById('regionField');
+            const regionText = document.getElementById('regionText');
+            const confirmBtn = document.getElementById('confirmBtn');
+            const deliverySubtotal = document.getElementById('deliverySubtotal');
+            const deliveryTotal = document.getElementById('deliveryTotal');
+            const stkStatus = document.getElementById('stkDeliveryStatus');
+            const stkOverlay = document.getElementById('stkWaitingOverlay');
+            const backToForm = document.getElementById('backToForm');
+
+            // Tracking elements
+            const trackBtn = document.getElementById('trackBtn');
+            const trackQty = document.getElementById('trackQty');
+            const trackTotal = document.getElementById('trackTotal');
+            const trackCounty = document.getElementById('trackCounty');
+            const deliveryEstimateText = document.getElementById('deliveryEstimateText');
+            const deliveryDetailText = document.getElementById('deliveryDetailText');
+            const trackEmail = document.getElementById('trackEmail');
+            const trackAddress = document.getElementById('trackAddress');
+            const trackNotes = document.getElementById('trackNotes');
+
+            // Price elements
+            const page1Price = document.getElementById('page1Price');
+            const page1Compare = document.getElementById('page1Compare');
+            const summarySubtotal = document.getElementById('summarySubtotal');
+            const summaryShipping = document.getElementById('summaryShipping');
+            const summaryTotal = document.getElementById('summaryTotal');
+            const buyNowPrice = document.getElementById('buyNowPrice');
+
+            // ===== STATE =====
+            let selectedQty = 1;
+            let selectedPrice = 450;
+            let selectedCounty = '';
+            let orderData = { name: '', phone: '', whatsapp: '' };
+
+            // ===== LANDMARKS =====
+            const LANDMARKS = {
+                "Mombasa": "City Mall Nyali",
+                "Kwale": "The Diani Beach Shopping Centre",
+                "Kilifi": "Kilifi Plantation",
+                "Tana River": "Hola Market",
+                "Lamu": "Manda Bay Resort",
+                "Taita Taveta": "Voi Safari Lodge",
+                "Garissa": "Garissa Plaza",
+                "Wajir": "Wajir Mall",
+                "Mandera": "Mandera County Referral Hospital",
+                "Marsabit": "Marsabit Plaza",
+                "Isiolo": "Isiolo Tourist Hotel",
+                "Meru": "Green Square Mall",
+                "Tharaka Nithi": "Chuka University",
+                "Embu": "Embu Mall",
+                "Kitui": "Kitui County Referral Hospital",
+                "Machakos": "Garden Hotel",
+                "Makueni": "Wote Green Square",
+                "Nyandarua": "Nyandarua County Referral Hospital",
+                "Nyeri": "Prestige Plaza Nyeri",
+                "Kirinyaga": "Kerugoya Level 5 Hospital",
+                "Murang'a": "Thika Greens / Murang'a Mall",
+                "Kiambu": "Quickmart Ruiru",
+                "Turkana": "Lodwar Town Centre",
+                "West Pokot": "Kapenguria County Referral Hospital",
+                "Samburu": "Maralal Safari Lodge",
+                "Trans Nzoia": "Kitale Mall",
+                "Uasin Gishu": "Rupa's Mall",
+                "Elgeyo Marakwet": "Iten County Referral Hospital",
+                "Nandi": "Kapsabet Mall",
+                "Baringo": "Kabarnet Hotel",
+                "Laikipia": "Nanyuki Mall",
+                "Nakuru": "Westside Mall",
+                "Narok": "Narok Town Mall",
+                "Kajiado": "Kajiado County Referral Hospital",
+                "Kericho": "Tuskys / Kericho Green Square area",
+                "Bomet": "Bomet Green Stadium area / businesses",
+                "Kakamega": "Kakamega Mall",
+                "Vihiga": "Vihiga County Referral Hospital",
+                "Bungoma": "Bungoma County Referral Hospital",
+                "Busia": "Busia Mall",
+                "Siaya": "Siaya County Referral Hospital",
+                "Kisumu": "Kisumu City Mall",
+                "Homa Bay": "Homa Bay County Referral Hospital",
+                "Migori": "Migori County Referral Hospital",
+                "Kisii": "Kisii Teaching & Referral Hospital",
+                "Nyamira": "Nyamira County Referral Hospital",
+                "Nairobi": "Odeon"
+            };
+
+            // ===== REGION → DELIVERY TIME =====
+            const deliveryTimes = {
+                "Nairobi": "Tomorrow",
+                "Coast": "2 days",
+                "Rift Valley": "2 days",
+                "Nyanza": "2 days",
+                "Western": "2 days",
+                "Mt Kenya": "2 days",
+                "Eastern": "3 days"
+            };
+
+            // ===== HELPERS =====
+            function formatPrice(amount) {
+                return 'KSh ' + Number(amount).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            }
+
+            function showPage(pageId) {
+                document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+                document.getElementById(pageId).classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            function openFormOverlay() {
+                formOverlay.classList.add('active');
+                page1.classList.add('blurred');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeFormOverlay() {
+                formOverlay.classList.remove('active');
+                page1.classList.remove('blurred');
+                document.body.style.overflow = '';
+            }
+
+            function updatePrices(qty, price, compare) {
+                selectedQty = qty;
+                selectedPrice = price;
+
+                page1Price.textContent = formatPrice(price);
+                page1Compare.textContent = formatPrice(compare);
+                summarySubtotal.textContent = formatPrice(price);
+                summaryShipping.textContent = 'Free';
+                summaryTotal.textContent = formatPrice(price);
+                buyNowPrice.textContent = formatPrice(price);
+                deliverySubtotal.textContent = formatPrice(price);
+                deliveryTotal.textContent = formatPrice(price);
+                trackTotal.textContent = formatPrice(price);
+                trackQty.textContent = qty + ' Unit' + (qty > 1 ? 's' : '');
+            }
+
+            // ===== QUANTITY SELECTORS =====
+            const page1QtyOptions = document.querySelectorAll('#page1QtySelector .qty-option');
+            const page2QtyOptions = document.querySelectorAll('#page2QtySelector .form-qty-option');
+
+            page1QtyOptions.forEach(opt => {
+                opt.addEventListener('click', function() {
+                    page1QtyOptions.forEach(o => o.classList.remove('active'));
+                    this.classList.add('active');
+                    const qty = parseInt(this.dataset.qty);
+                    const price = parseInt(this.dataset.price);
+                    const compare = parseInt(this.dataset.compare);
+                    page2QtyOptions.forEach(o => {
+                        o.classList.toggle('active', parseInt(o.dataset.qty) === qty);
+                    });
+                    updatePrices(qty, price, compare);
+                });
+            });
+
+            page2QtyOptions.forEach(opt => {
+                opt.addEventListener('click', function() {
+                    page2QtyOptions.forEach(o => o.classList.remove('active'));
+                    this.classList.add('active');
+                    const qty = parseInt(this.dataset.qty);
+                    const price = parseInt(this.dataset.price);
+                    const compare = parseInt(this.dataset.compare);
+                    page1QtyOptions.forEach(o => {
+                        o.classList.toggle('active', parseInt(o.dataset.qty) === qty);
+                    });
+                    updatePrices(qty, price, compare);
+                });
+            });
+
+            // ===== THUMBNAILS =====
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    document.getElementById('mainImage').src = this.dataset.img;
+                });
+            });
+
+            // ===== ACCORDION =====
+            document.querySelectorAll('.accordion-summary').forEach(summary => {
+                summary.addEventListener('click', function() {
+                    this.closest('.accordion').classList.toggle('open');
+                });
+            });
+
+            // ===== OPEN/CLOSE OVERLAY =====
+            orderNowBtn.addEventListener('click', openFormOverlay);
+            closeFormBtn.addEventListener('click', closeFormOverlay);
+            formOverlay.addEventListener('click', function(e) {
+                if (e.target === this) closeFormOverlay();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && formOverlay.classList.contains('active')) closeFormOverlay();
+            });
+
+            // ===== BUY NOW → DELIVERY =====
+            buyNowBtn.addEventListener('click', function() {
+                const name = fullName.value.trim();
+                const phone = phoneNumber.value.trim();
+                const whatsapp = whatsappNumber.value.trim();
+
+                if (!name) return alert('Please enter your full name.');
+                if (!phone) return alert('Please enter your phone number for M-PESA STK.');
+                if (!whatsapp) return alert('Please enter your WhatsApp number.');
+
+                orderData.name = name;
+                orderData.phone = phone;
+                orderData.whatsapp = whatsapp;
+
+                closeFormOverlay();
+                showPage('page3');
+                countySelect.value = '';
+                pickupDetail.textContent =
+                "Delivery is free. We'll route your order to the office nearest your county — no home address or location sharing required.";
+                regionText.textContent = 'Select a county to see region';
+                regionField.classList.remove('filled');
+                confirmBtn.disabled = true;
+                selectedCounty = '';
+                stkStatus.className = '';
+                stkStatus.style.display = 'none';
+                stkStatus.textContent = '';
+            });
+
+            // ===== BACK TO FORM =====
+            backToForm.addEventListener('click', function() {
+                showPage('page1');
+                setTimeout(openFormOverlay, 300);
+            });
+
+            // ===== COUNTY CHANGE =====
+            countySelect.addEventListener('change', function() {
+                const county = countySelect.value;
+                if (county) {
+                    const optgroup = countySelect.selectedOptions[0].closest('optgroup');
+                    const region = optgroup ? optgroup.label : '';
+                    const landmark = LANDMARKS[county] || '[landmark TBD]';
+                    pickupDetail.textContent = 'Our office next to ' + landmark + ', ' + county + '.';
+                    regionText.textContent = region;
+                    regionField.classList.add('filled');
+                    confirmBtn.disabled = false;
+                    selectedCounty = county;
+                } else {
+                    pickupDetail.textContent =
+                        "Delivery is free. We'll route your order to the office nearest your county — no home address or location sharing required.";
+                    regionText.textContent = 'Select a county to see region';
+                    regionField.classList.remove('filled');
+                    confirmBtn.disabled = true;
+                    selectedCounty = '';
+                }
+            });
+
+            // ===== STK API HELPERS =====
+            function normalizePhone(raw) {
+                let p = raw.replace(/\D/g, '');
+                if (p.startsWith('0')) p = '254' + p.slice(1);
+                if (!p.startsWith('254')) p = '254' + p;
+                return p;
+            }
+
+            function errorText(data) {
+                if (typeof data === 'string') return data;
+                if (data && data.error) return typeof data.error === 'string' ? data.error : JSON.stringify(data.error);
+                if (data && data.message) return data.message;
+                return 'Request failed';
+            }
+
+            // ===== CONFIRM ORDER (STK) =====
+            confirmBtn.addEventListener('click', async function() {
+                if (!selectedCounty) return alert('Please select your county.');
+
+                const amount = selectedPrice;
+                const phone = orderData.phone;
+
+                stkOverlay.style.display = 'flex';
+                stkStatus.className = 'pending';
+                stkStatus.style.display = 'block';
+                stkStatus.textContent = '⏳ Sending STK push...';
+                confirmBtn.disabled = true;
+
+                try {
+                    // Send STK push with the correct amount (selectedPrice, not 1)
+                    const payload = {
+                        phone: normalizePhone(phone),
+                        amount: amount,
+                        reference: 'SHILAJIT-' + Date.now(),
+                        channelId: 'PAYL-4SGHZQ'
+                    };
+
+                    const response = await fetch('/api/stk-push', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        const errData = await response.json();
+                        throw new Error(errorText(errData));
+                    }
+
+                    const result = await response.json();
+                    const transactionId = result.transactionId || result.reference || result.transaction_id;
+                    if (!transactionId) throw new Error('No transaction ID returned');
+
+                    stkStatus.textContent = '⏳ Waiting for your M-PESA PIN...';
+
+                    // Poll status
+                    const start = Date.now();
+                    const timeout = 60000;
+                    let confirmed = false;
+
+                    while (Date.now() - start < timeout && !confirmed) {
+                        const statusRes = await fetch('/api/status?id=' + encodeURIComponent(transactionId));
+                        if (statusRes.ok) {
+                            const data = await statusRes.json();
+                            if (data.status === 'COMPLETED') {
+                                confirmed = true;
+                                break;
+                            } else if (data.status === 'FAILED' || data.status === 'CANCELLED') {
+                                throw new Error('Payment ' + data.status.toLowerCase());
+                            }
+                        }
+                        await new Promise(resolve => setTimeout(resolve, 2000));
+                    }
+
+                    if (!confirmed) throw new Error('Transaction timed out');
+
+                    // ===== PAYMENT SUCCESS =====
+                    stkOverlay.style.display = 'none';
+                    stkStatus.className = 'success';
+                    stkStatus.textContent = '✅ Payment confirmed! Order placed.';
+
+                    // Show tracking section
+                    showTrackingSection();
+
+                    // Reset form
+                    confirmBtn.disabled = false;
+
+                } catch (err) {
+                    stkOverlay.style.display = 'none';
+                    stkStatus.className = 'error';
+                    stkStatus.textContent = '❌ ' + errorText(err);
+                    confirmBtn.disabled = false;
+                }
+            });
+
+            // ===== SHOW TRACKING SECTION =====
+            function showTrackingSection() {
+                // Hide page3, show tracking
+                document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+                trackingSection.classList.add('visible');
+
+                // Fill tracking details
+                const qtyText = selectedQty + ' Unit' + (selectedQty > 1 ? 's' : '');
+                trackQty.textContent = qtyText;
+                trackTotal.textContent = formatPrice(selectedPrice);
+                trackCounty.textContent = selectedCounty || '—';
+
+                // Determine delivery estimate
+                const optgroup = countySelect.selectedOptions[0]?.closest('optgroup');
+                const region = optgroup ? optgroup.label : '';
+                const days = deliveryTimes[region] || '2 days';
+                const isTomorrow = days === 'Tomorrow';
+                const dayText = isTomorrow ? 'tomorrow' : days;
+
+                deliveryEstimateText.textContent = 'Delivery Estimate: ' + days;
+                deliveryDetailText.textContent =
+                    'Your order will be ready for pickup ' + (isTomorrow ? 'tomorrow' : 'in ' + days) +
+                    ' at our office in ' + selectedCounty + '.';
+
+                // Enable track button after form is filled
+                trackBtn.disabled = false;
+                trackBtn.textContent = '📬 Send Tracking Updates';
+                trackBtn.onclick = function() {
+                    const email = trackEmail.value.trim();
+                    if (!email) {
+                        alert('Please enter your email address to receive tracking updates.');
+                        return;
+                    }
+                    alert(
+                        '✅ Tracking updates will be sent to ' + email +
+                        '\n\n📦 Order: Prime Shilajit™\n📍 County: ' + selectedCounty +
+                        '\n🚚 Delivery: ' + days +
+                        '\n📝 Notes: ' + (trackNotes.value.trim() || 'None') +
+                        '\n\nWe\'ll notify you when your order is ready for pickup.'
+                    );
+                    trackBtn.textContent = '✅ Updates Sent!';
+                    trackBtn.disabled = true;
+                };
+
+                // Also bind enter key on email field
+                trackEmail.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' && !trackBtn.disabled) trackBtn.click();
+                });
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // ===== INIT =====
+            updatePrices(1, 450, 999);
+
+            // Ensure "BUY IT NOW" always uses the correct price
+            document.querySelectorAll('.form-fields input').forEach(el => {
+                el.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') buyNowBtn.click();
+                });
+            });
+
+            console.log('✅ Mike Sonko Foundation – Order + Tracking ready.');
+            console.log('💰 Price: ' + selectedPrice + ' Ksh (will be sent to STK)');
+
+        })();
     </script>
 
 </body>
