@@ -45,7 +45,8 @@
                         <div class="qty-option" data-qty="2" data-price="999" data-compare="1998" data-save="50"><span class="qty-label">2 Units</span><span class="qty-save">Save 50%</span><span class="qty-price">KSh999</span></div>
                         <div class="qty-option" data-qty="3" data-price="2000" data-compare="3999" data-save="50"><span class="qty-label">3 Units</span><span class="qty-save">Save 50%</span><span class="qty-price">KSh2,000</span></div>
                     </div>
-                    <button class="btn-order" id="orderNowBtn"><i class="fas fa-mobile-alt"></i> Order Now – M-PESA STK</button>
+                    <!-- BUTTON FIXED: Text changed to "Order Now" + onclick direct -->
+                    <button class="btn-order" id="orderNowBtn" onclick="openFormOverlay()"><i class="fas fa-mobile-alt"></i> Order Now</button>
                     <div class="features-list">
                         <div class="feature-item"><i class="fas fa-lock"></i> 14 day warranty</div>
                         <div class="feature-item"><i class="fas fa-truck"></i> Free delivery</div>
@@ -168,5 +169,27 @@
     </footer>
 
     <script src="script.min.js"></script>
+    <script>
+        // Fallback function – ensures the button works even if script.min.js fails to load
+        function openFormOverlay() {
+            const overlay = document.getElementById('formOverlay');
+            const page1 = document.getElementById('page1');
+            if (overlay) {
+                overlay.classList.add('active');
+                page1.classList.add('blurred');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        // Ensure the button still works if the event listener in script.min.js doesn't fire
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('orderNowBtn');
+            if (btn) {
+                // Remove any existing click listeners and add a new one
+                btn.onclick = function() {
+                    openFormOverlay();
+                };
+            }
+        });
+    </script>
 </body>
 </html>
