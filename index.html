@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mike Sonko Foundation – Prime Shilajit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        /* ----- RESET & BASE (same as Shilajit page) ----- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 62.5%; scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: #2e2a39;
+            background: #f7f7f7;
+            min-height: 100vh;
+        }
+        .page-width { max-width: 120rem; margin: 0 auto; padding: 0 2rem; }
+
+        /* ----- COLORS (green palette) ----- */
+        :root {
+            --green-dark: #0e8e0e;
+            --green-medium: #199d72;
+            --green-light: #e6f7e6;
+            --green-badge: #0e8e0e;
+            --green-hover: #0a7a0a;
+            --green-bg: #f0faf0;
+            --green: #1f8a3d;
+            --green-pale: #eaf6ec;
+            --muted: #6b7280;
+            --line: #e5e7eb;
+            --bg: #f4f5f4;
+        }
+
+        /* ----- ANNOUNCEMENT BAR ----- */
+        .announcement-bar {
+            background: #000000;
+            color: #fdfbf7;
+            text-align: center;
+            padding: 1rem 2rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 0.03rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .announcement-bar i { margin-right: 0.6rem; }
+
+        /* ----- HEADER (Mike Sonko branding) ----- */
+        .site-header {
+            background: #f7f7f7;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(46, 42, 57, 0.06);
+        }
+        .site-header .page-width {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #2e2a39;
+        }
+        .logo i { color: #000; margin-right: 0.6rem; }
+
+        /* ----- PAGES ----- */
+        .page { display: none; }
+        .page.active { display: block; }
+
+        /* ----- PAGE 1: PRODUCT (background) ----- */
+        #page1 {
+            position: relative;
+            transition: filter 0.4s ease;
+        }
+        #page1.blurred {
+            filter: blur(6px) brightness(0.7);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            padding: 2.4rem 0 1.6rem;
+        }
+        .product-gallery {
+            position: sticky;
+            top: 2rem;
+        }
+        .main-image {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.04);
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        .main-image img { width: 100%; height: 100%; object-fit: contain; }
+
+        .thumbnail-list {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1.6rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .thumbnail {
+            width: 7.2rem;
+            height: 7.2rem;
+            border-radius: 0.8rem;
+            overflow: hidden;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: border-color 0.2s, transform 0.2s;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.4rem;
+            flex: 0 0 auto;
+        }
+        .thumbnail:hover { transform: scale(1.03); }
+        .thumbnail.active { border-color: var(--green-dark); }
+        .thumbnail img { width: 100%; height: 100%; object-fit: contain; }
+
+        .product-info { display: flex; flex-direction: column; gap: 1.6rem; }
+        .product-title h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #2e2a39;
+            text-align: center;
+        }
+
+        .product-price-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .price-current {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--green-dark);
+        }
+        .price-compare {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #999;
+            text-decoration: line-through;
+        }
+        .badge-sale {
+            background: var(--green-dark);
+            color: #fdfbf7;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 0.2rem 1.2rem;
+            border-radius: 2rem;
+            letter-spacing: 0.04rem;
+        }
+
+        .qty-selector {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0.4rem 0;
+        }
+        .qty-option {
+            flex: 1;
+            min-width: 10rem;
+            max-width: 14rem;
+            background: #ffffff;
+            border: 2px solid #e8e8e8;
+            border-radius: 1.0rem;
+            padding: 1.2rem 0.8rem;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+        }
+        .qty-option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0.6rem 1.6rem rgba(0, 0, 0, 0.06);
+        }
+        .qty-option.active {
+            border-color: var(--green-dark);
+            background: var(--green-light);
+        }
+        .qty-option .qty-label { font-size: 1.5rem; font-weight: 600; color: #2e2a39; }
+        .qty-option .qty-save {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--green-dark);
+            display: block;
+            margin-top: 0.2rem;
+        }
+        .qty-option .qty-price {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #555;
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        .btn-order {
+            display: inline-block;
+            width: 100%;
+            padding: 1.6rem 2.4rem;
+            background: var(--green-dark);
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 1.0rem;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            text-align: center;
+            letter-spacing: 0.04rem;
+            margin-top: 0.4rem;
+        }
+        .btn-order:hover { background: var(--green-hover); transform: translateY(-2px); }
+        .btn-order i { margin-right: 0.8rem; }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-top: 0.4rem;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #2e2a39;
+        }
+        .feature-item i {
+            font-size: 1.8rem;
+            width: 2.4rem;
+            text-align: center;
+            color: var(--green-dark);
+        }
+
+        /* ----- FAQ SECTION ----- */
+        .faq-section {
+            padding: 4rem 0 2rem 0;
+            background: #f7f7f7;
+        }
+        .faq-section .page-width { max-width: 80rem; }
+        .faq-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 2.8rem;
+            color: #2e2a39;
+        }
+        .accordion {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+        .accordion:hover { box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.06); }
+        .accordion-summary {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.6rem 2.0rem;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.15s;
+        }
+        .accordion-summary:hover { background: #fafafa; }
+        .accordion-summary i {
+            font-size: 1.8rem;
+            color: var(--green-dark);
+            width: 2.4rem;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .accordion-summary h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #2e2a39;
+            flex: 1;
+        }
+        .accordion-summary .chevron {
+            font-size: 1.4rem;
+            color: #888;
+            transition: transform 0.3s ease;
+            margin-left: auto;
+        }
+        .accordion.open .accordion-summary .chevron { transform: rotate(180deg); }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.3s ease;
+            padding: 0 2.0rem;
+            color: #444;
+            font-size: 1.5rem;
+            line-height: 1.7;
+        }
+        .accordion.open .accordion-content {
+            max-height: 40rem;
+            padding: 0 2.0rem 2.0rem 2.0rem;
+        }
+
+        /* ----- GUARANTEES ----- */
+        .guarantees-section {
+            padding: 3.6rem 0 4rem 0;
+            background: #f7f7f7;
+        }
+        .guarantees-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 3.2rem;
+            color: #2e2a39;
+        }
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.4rem;
+        }
+        .guarantee-card {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            padding: 2.4rem 1.6rem;
+            text-align: center;
+            box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .guarantee-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.06);
+        }
+        .guarantee-card i {
+            font-size: 3.2rem;
+            color: var(--green-dark);
+            margin-bottom: 1.2rem;
+        }
+        .guarantee-card h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #2e2a39;
+            margin-bottom: 0.6rem;
+        }
+        .guarantee-card p {
+            font-size: 1.4rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* ----- OVERLAY (form) ----- */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(4px);
+            z-index: 200;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            animation: fadeOverlay 0.35s ease;
+        }
+        .overlay.active { display: flex; }
+        @keyframes fadeOverlay { 0%{opacity:0;}100%{opacity:1;} }
+
+        .form-card {
+            max-width: 52rem;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 1.6rem;
+            padding: 3.2rem 3.2rem 2.8rem;
+            box-shadow: 0 2.4rem 6.0rem rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.4s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        @keyframes slideUp { 0%{transform:translateY(40px);opacity:0;}100%{transform:translateY(0);opacity:1;} }
+
+        .form-title {
+            text-align: center;
+            font-size: 2.0rem;
+            font-weight: 600;
+            color: #2e2a39;
+            margin-bottom: 2.0rem;
+        }
+        .form-title i { color: var(--green-dark); margin-right: 0.6rem; }
+
+        .form-qty-grid {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2.0rem;
+        }
+        .form-qty-option {
+            flex: 1;
+            min-width: 9rem;
+            max-width: 13rem;
+            background: #f7f7f7;
+            border: 2px solid #e8e8e8;
+            border-radius: 1.0rem;
+            padding: 1.0rem 0.6rem;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s, transform 0.15s, background 0.2s;
+        }
+        .form-qty-option:hover { transform: translateY(-2px); }
+        .form-qty-option.active {
+            border-color: var(--green-dark);
+            background: var(--green-light);
+        }
+        .form-qty-option .qty-label { font-size: 1.4rem; font-weight: 600; color: #2e2a39; }
+        .form-qty-option .qty-save {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--green-dark);
+            display: block;
+            margin-top: 0.2rem;
+        }
+        .form-qty-option .qty-price {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #555;
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        .order-summary {
+            background: #f9f9f9;
+            border-radius: 1.0rem;
+            padding: 1.6rem 2.0rem;
+            margin-bottom: 2.0rem;
+            border: 1px solid #eee;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.5rem;
+            padding: 0.4rem 0;
+            color: #2e2a39;
+        }
+        .summary-row.total {
+            font-weight: 700;
+            font-size: 1.8rem;
+            border-top: 2px solid #ddd;
+            padding-top: 1.0rem;
+            margin-top: 0.4rem;
+            color: var(--green-dark);
+        }
+        .summary-row .label { color: #555; }
+
+        .form-fields {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 2.0rem;
+        }
+        .form-fields .field {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            background: #f7f7f7;
+            border-radius: 1.0rem;
+            padding: 0 1.6rem;
+            border: 1px solid #e8e8e8;
+            transition: border-color 0.2s;
+        }
+        .form-fields .field:focus-within { border-color: var(--green-dark); }
+        .form-fields .field i {
+            font-size: 1.8rem;
+            color: #888;
+            width: 2.2rem;
+            text-align: center;
+        }
+        .form-fields .field input {
+            width: 100%;
+            padding: 1.4rem 0;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            border: none;
+            background: transparent;
+            outline: none;
+            color: #2e2a39;
+        }
+        .form-fields .field input::placeholder { color: #aaa; }
+
+        .btn-buy-now {
+            display: inline-block;
+            width: 100%;
+            padding: 1.6rem 2.4rem;
+            background: var(--green-dark);
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 1.0rem;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            text-align: center;
+            letter-spacing: 0.04rem;
+        }
+        .btn-buy-now:hover { background: var(--green-hover); transform: translateY(-2px); }
+        .btn-buy-now i { margin-right: 0.8rem; }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1.6rem;
+            font-size: 1.4rem;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.2s;
+            text-align: center;
+            width: 100%;
+        }
+        .back-link:hover { color: var(--green-dark); }
+        .back-link i { margin-right: 0.4rem; }
+
+        /* ----- PAGE 3: DELIVERY (with STK) ----- */
+        .delivery-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1.6rem 4rem;
+        }
+
+        .delivery-card {
+            width: 100%;
+            max-width: 420px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        .delivery-header {
+            background: #111;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .delivery-brand {
+            text-align: center;
+            padding: 16px;
+            font-weight: 700;
+            font-size: 16px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .delivery-body { padding: 20px; }
+
+        .delivery-body h1 {
+            font-size: 19px;
+            margin: 0 0 4px;
+            text-align: center;
+        }
+
+        .delivery-body .sub {
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            margin: 0 0 20px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin: 0 0 8px;
+        }
+
+        .pickup-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: var(--green-pale);
+            border: 1px solid #cdeccf;
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 22px;
+            cursor: default;
+        }
+
+        .radio-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid var(--green);
+            flex: 0 0 auto;
+            margin-top: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .radio-dot::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: var(--green);
+            border-radius: 50%;
+        }
+
+        .pickup-text strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+        .pickup-text span {
+            font-size: 13px;
+            color: #3f6b48;
+            line-height: 1.4;
+        }
+
+        .region-field {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f7f7f7;
+            border: 1px dashed var(--line);
+            border-radius: 10px;
+            padding: 13px 14px;
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 22px;
+            min-height: 46px;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+        .region-field.filled {
+            background: var(--green-pale);
+            border: 1px solid #cdeccf;
+            color: var(--green-dark);
+            font-weight: 600;
+        }
+        .region-field svg { flex: 0 0 auto; }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        select {
+            width: 100%;
+            appearance: none;
+            -webkit-appearance: none;
+            padding: 13px 40px 13px 14px;
+            font-size: 15px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%236b7280" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>') no-repeat right 14px center;
+            color: var(--ink);
+            margin-bottom: 18px;
+            font-family: inherit;
+        }
+        select:focus {
+            outline: 2px solid var(--green);
+            outline-offset: 1px;
+        }
+
+        .summary {
+            border-top: 1px solid var(--line);
+            padding-top: 14px;
+            margin-bottom: 18px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+        .row.total {
+            color: var(--ink);
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .row.total .amount { color: var(--green-dark); }
+
+        button.confirm {
+            width: 100%;
+            background: var(--green);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        button.confirm:disabled {
+            background: #b9d9bf;
+            cursor: not-allowed;
+        }
+        button.confirm:not(:disabled):hover {
+            background: var(--green-dark);
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 14px;
+            font-size: 13px;
+            color: var(--muted);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .back:hover { color: var(--green-dark); }
+
+        .note {
+            font-size: 11.5px;
+            color: #9ca3af;
+            text-align: center;
+            margin-top: 16px;
+            line-height: 1.5;
+        }
+
+        /* ----- STK status message on delivery page ----- */
+        #stkDeliveryStatus {
+            margin-top: 12px;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            display: none;
+            font-weight: 500;
+        }
+        #stkDeliveryStatus.pending {
+            display: block;
+            background: #fff8e1;
+            color: #e65100;
+        }
+        #stkDeliveryStatus.success {
+            display: block;
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        #stkDeliveryStatus.error {
+            display: block;
+            background: #fce4ec;
+            color: #c62828;
+        }
+
+        /* ----- FOOTER ----- */
+        .site-footer {
+            background: #000000;
+            color: #fdfbf7;
+            padding: 2.0rem 0;
+            text-align: center;
+            font-size: 1.4rem;
+            margin-top: 2.4rem;
+        }
+        .site-footer small { opacity: 0.7; }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 900px) {
+            .product-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+            .product-gallery { position: relative; top: 0; }
+            .product-title h1 { font-size: 2.2rem; }
+            .form-card { padding: 2.4rem 1.6rem; margin: 1rem; }
+            .guarantees-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 550px) {
+            .thumbnail { width: 5.6rem; height: 5.6rem; }
+            .price-current { font-size: 2.0rem; }
+            .btn-order, .btn-buy-now, button.confirm { font-size: 1.6rem; padding: 1.4rem 2rem; }
+            .form-title, .delivery-body h1, .faq-title, .guarantees-title { font-size: 1.8rem; }
+            .qty-option, .form-qty-option { min-width: 8rem; padding: 1.0rem 0.6rem; }
+            .qty-option .qty-label, .form-qty-option .qty-label { font-size: 1.3rem; }
+            .overlay { padding: 1rem; }
+            .delivery-card { border-radius: 12px; }
+            .delivery-body { padding: 16px; }
+            .guarantees-grid { grid-template-columns: 1fr; }
+        }
+        .text-center { text-align: center; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+
+    <!-- ===== ANNOUNCEMENT BAR ===== -->
+    <div class="announcement-bar">
+        <i class="fas fa-mobile-alt"></i> Pay with M-PESA STK Push &nbsp;|&nbsp; Free Delivery
+    </div>
+
+    <!-- ===== HEADER (Mike Sonko) ===== -->
+    <header class="site-header">
+        <div class="page-width">
+            <div class="logo"><i class="fas fa-hand-holding-heart"></i> Mike Sonko Foundation</div>
+        </div>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- PAGE 1: PRODUCT (Prime Shilajit)                              -->
+    <!-- ============================================================ -->
+    <div id="page1" class="page active">
+        <div class="page-width">
+            <div class="product-grid">
+
+                <!-- Gallery -->
+                <div class="product-gallery">
+                    <div class="main-image" id="mainImageContainer">
+                        <img id="mainImage"
+                        src="https://www.kuwamart.com/cdn/shop/files/heroo_image_49effcda-9abd-42f7-9f13-c74172aa2d0c.webp?v=1785257439"
+                        alt="Prime Shilajit" />
+                    </div>
+                    <div class="thumbnail-list" id="thumbnailList">
+                        <div class="thumbnail active" data-img="https://www.kuwamart.com/cdn/shop/files/heroo_image_49effcda-9abd-42f7-9f13-c74172aa2d0c.webp?v=1785257439">
+                            <img src="https://www.kuwamart.com/cdn/shop/files/heroo_image_49effcda-9abd-42f7-9f13-c74172aa2d0c.webp?v=1785257439" alt="1" />
+                        </div>
+                        <div class="thumbnail" data-img="https://www.kuwamart.com/cdn/shop/files/SBH3_a4c2c47d-7df9-4100-bbb6-51eebd491ba2.webp?v=1785257468">
+                            <img src="https://www.kuwamart.com/cdn/shop/files/SBH3_a4c2c47d-7df9-4100-bbb6-51eebd491ba2.webp?v=1785257468" alt="2" />
+                        </div>
+                        <div class="thumbnail" data-img="https://www.kuwamart.com/cdn/shop/files/FHGJ.webp?v=1785257468">
+                            <img src="https://www.kuwamart.com/cdn/shop/files/FHGJ.webp?v=1785257468" alt="3" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="product-info">
+                    <div class="product-title">
+                        <h1>Prime Shilajit™ – Vitality Formula</h1>
+                    </div>
+
+                    <div class="product-price-row">
+                        <span class="price-current" id="page1Price">KSh450.00</span>
+                        <span class="price-compare" id="page1Compare">KSh999.00</span>
+                        <span class="badge-sale">خصم</span>
+                    </div>
+
+                    <!-- Quantity selector (page1) -->
+                    <div class="qty-selector" id="page1QtySelector">
+                        <div class="qty-option active" data-qty="1" data-price="450" data-compare="999" data-save="55">
+                            <span class="qty-label">1 Unit</span>
+                            <span class="qty-save">Save 55%</span>
+                            <span class="qty-price">KSh450</span>
+                        </div>
+                        <div class="qty-option" data-qty="2" data-price="999" data-compare="1998" data-save="50">
+                            <span class="qty-label">2 Units</span>
+                            <span class="qty-save">Save 50%</span>
+                            <span class="qty-price">KSh999</span>
+                        </div>
+                        <div class="qty-option" data-qty="3" data-price="2000" data-compare="3999" data-save="50">
+                            <span class="qty-label">3 Units</span>
+                            <span class="qty-save">Save 50%</span>
+                            <span class="qty-price">KSh2,000</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-order" id="orderNowBtn">
+                        <i class="fas fa-mobile-alt"></i> Order Now – M-PESA STK
+                    </button>
+
+                    <div class="features-list">
+                        <div class="feature-item"><i class="fas fa-lock"></i> 14 day warranty</div>
+                        <div class="feature-item"><i class="fas fa-truck"></i> Free delivery</div>
+                        <div class="feature-item"><i class="fas fa-tag"></i> Pay via M-PESA STK</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===== FAQ SECTION ===== -->
+        <div class="faq-section">
+            <div class="page-width">
+                <h2 class="faq-title"><strong>Maswali ya Kawaida</strong></h2>
+
+                <div class="accordion">
+                    <div class="accordion-summary" data-target="faq1">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Je, Shilajit ni salama kwa wanaume?</h3>
+                        <span class="chevron"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion-content" id="faq1">
+                        <p>Ndio. Pure Himalayan Shilajit ni kirutubisho cha asili kilichotengenezwa kwa viwango vya ubora na kinapaswa kutumiwa kulingana na maelekezo yaliyopo kwenye kifungashio. Ikiwa una hali ya kiafya au unatumia dawa, ni vyema kushauriana na mtaalamu wa afya kabla ya matumizi.</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-summary" data-target="faq2">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Nitachukua muda gani kuona matokeo?</h3>
+                        <span class="chevron"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion-content" id="faq2">
+                        <p>Matokeo yanaweza kutofautiana kati ya mtu na mtu kulingana na mtindo wa maisha, lishe, na matumizi ya mara kwa mara. Watu wengi huchagua kutumia Shilajit kama sehemu ya mpango wao wa kusaidia afya na ustawi wa kila siku.</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-summary" data-target="faq3">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Je, Shilajit hutumika kwa nini?</h3>
+                        <span class="chevron"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion-content" id="faq3">
+                        <p>Pure Himalayan Shilajit hutumiwa na watu wengi kama sehemu ya utaratibu wao wa kila siku wa kusaidia ustawi wa mwili, nguvu za kila siku, na maisha yenye shughuli nyingi.</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-summary" data-target="faq4">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Usafirishaji unachukua muda gani?</h3>
+                        <span class="chevron"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion-content" id="faq4">
+                        <p>Muda wa kawaida wa kuwasilisha bidhaa huwa kati ya saa 24–48.</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-summary" data-target="faq5">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Naweza kurudisha bidhaa kama sijaipenda?</h3>
+                        <span class="chevron"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion-content" id="faq5">
+                        <p>Ndiyo, unaweza kurudisha bidhaa kwa kampuni ikiwa hujaridhika nayo, mradi tu yaliyomo hayajaharibika.</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-summary" data-target="faq6">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Kuna dhamana ya bidhaa?</h3>
+                        <span class="chevron"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion-content" id="faq6">
+                        <p>Ndiyo, tunawapatia wateja wetu wote dhamana ya siku 14 kwa bidhaa.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===== GUARANTEES SECTION ===== -->
+        <div class="guarantees-section">
+            <div class="page-width">
+                <h2 class="guarantees-title">Guarantees and returns</h2>
+                <div class="guarantees-grid">
+
+                    <div class="guarantee-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Product Warranty</h3>
+                        <p>14 day guarantee if you don't like it you can get your money back</p>
+                    </div>
+
+                    <div class="guarantee-card">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h3>M-PESA STK Payment</h3>
+                        <p>Secure payment via M-PESA STK push – instant confirmation.</p>
+                    </div>
+
+                    <div class="guarantee-card">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h3>Fast and reliable shipping</h3>
+                        <p>We ship to all cities within 2 to 5 days!</p>
+                    </div>
+
+                    <div class="guarantee-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>After-sales service</h3>
+                        <p>Customer service is available 24/7</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- OVERLAY + PAGE 2: FORM (floating)                           -->
+    <!-- ============================================================ -->
+    <div class="overlay" id="formOverlay">
+        <div class="form-card">
+
+            <h2 class="form-title"><i class="fas fa-clipboard-list"></i>Please fill in the form to order</h2>
+
+            <!-- Quantity selector (page2) -->
+            <div class="form-qty-grid" id="page2QtySelector">
+                <div class="form-qty-option active" data-qty="1" data-price="450" data-compare="999" data-save="55">
+                    <span class="qty-label">1 Unit</span>
+                    <span class="qty-save">Save 55%</span>
+                    <span class="qty-price">KSh450</span>
+                </div>
+                <div class="form-qty-option" data-qty="2" data-price="999" data-compare="1998" data-save="50">
+                    <span class="qty-label">2 Units</span>
+                    <span class="qty-save">Save 50%</span>
+                    <span class="qty-price">KSh999</span>
+                </div>
+                <div class="form-qty-option" data-qty="3" data-price="2000" data-compare="3999" data-save="50">
+                    <span class="qty-label">3 Units</span>
+                    <span class="qty-save">Save 50%</span>
+                    <span class="qty-price">KSh2,000</span>
+                </div>
+            </div>
+
+            <!-- Order summary -->
+            <div class="order-summary" id="orderSummary">
+                <div class="summary-row">
+                    <span class="label">Subtotal</span>
+                    <span id="summarySubtotal">KSh450.00</span>
+                </div>
+                <div class="summary-row">
+                    <span class="label">Shipping</span>
+                    <span id="summaryShipping">Free</span>
+                </div>
+                <div class="summary-row total">
+                    <span class="label">Total</span>
+                    <span id="summaryTotal">KSh450.00</span>
+                </div>
+            </div>
+
+            <!-- Form fields: Name, Phone, WhatsApp only -->
+            <div class="form-fields">
+                <div class="field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="fullName" placeholder="Type Your name" />
+                </div>
+                <div class="field">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" id="phoneNumber" placeholder="Phone (for M-PESA STK)" />
+                </div>
+                <div class="field">
+                    <i class="fab fa-whatsapp"></i>
+                    <input type="tel" id="whatsappNumber" placeholder="WhatsApp Number" />
+                </div>
+            </div>
+
+            <button class="btn-buy-now" id="buyNowBtn">
+                <i class="fas fa-shopping-bag"></i> BUY IT NOW – <span id="buyNowPrice">KSh450.00</span>
+            </button>
+
+            <span class="back-link" id="closeForm"><i class="fas fa-times"></i> Cancel</span>
+
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- PAGE 3: DELIVERY + STK PUSH                                  -->
+    <!-- ============================================================ -->
+    <div id="page3" class="page">
+        <div class="page-width">
+            <div class="delivery-wrapper">
+                <div class="delivery-card">
+
+                    <div class="delivery-header">🚚 Free delivery — Pay via M-PESA STK Push</div>
+                    <div class="delivery-brand">🛒 Mike Sonko Foundation</div>
+
+                    <div class="delivery-body">
+                        <h1>Choose your county</h1>
+                        <p class="sub">Pick up from our nearest office — no address needed</p>
+
+                        <div class="section-label">Fulfilment</div>
+                        <div class="pickup-row" id="pickupRow">
+                            <div class="radio-dot"></div>
+                            <div class="pickup-text">
+                                <strong>Pickup at our office</strong>
+                                <span id="pickupDetail">Delivery is free. We'll route your order to the office nearest your county — no home address or location sharing required.</span>
+                            </div>
+                        </div>
+
+                        <div class="section-label">County</div>
+                        <label for="county" style="position:absolute;left:-9999px;">Select your county</label>
+                        <select id="county">
+                            <option value="">Select your county…</option>
+                            <optgroup label="Mt Kenya">
+                                <option>Kiambu</option><option>Murang'a</option><option>Nyeri</option>
+                                <option>Kirinyaga</option><option>Embu</option><option>Meru</option>
+                                <option>Tharaka Nithi</option><option>Laikipia</option><option>Nyandarua</option>
+                            </optgroup>
+                            <optgroup label="Rift Valley">
+                                <option>Kericho</option><option>Nakuru</option><option>Uasin Gishu</option>
+                                <option>Baringo</option><option>Narok</option><option>Kajiado</option>
+                                <option>Samburu</option><option>Trans Nzoia</option><option>West Pokot</option>
+                                <option>Elgeyo Marakwet</option><option>Nandi</option><option>Bomet</option>
+                                <option>Turkana</option>
+                            </optgroup>
+                            <optgroup label="Coast">
+                                <option>Mombasa</option><option>Kwale</option><option>Kilifi</option>
+                                <option>Tana River</option><option>Lamu</option><option>Taita Taveta</option>
+                            </optgroup>
+                            <optgroup label="Eastern">
+                                <option>Garissa</option><option>Wajir</option><option>Mandera</option>
+                                <option>Marsabit</option><option>Isiolo</option><option>Kitui</option>
+                                <option>Machakos</option><option>Makueni</option>
+                            </optgroup>
+                            <optgroup label="Nyanza">
+                                <option>Kisumu</option><option>Homa Bay</option><option>Migori</option>
+                                <option>Kisii</option><option>Nyamira</option><option>Siaya</option>
+                            </optgroup>
+                            <optgroup label="Western">
+                                <option>Kakamega</option><option>Vihiga</option><option>Bungoma</option><option>Busia</option>
+                            </optgroup>
+                            <optgroup label="Nairobi">
+                                <option>Nairobi</option>
+                            </optgroup>
+                        </select>
+
+                        <div class="section-label">Region</div>
+                        <div class="region-field" id="regionField">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+                            <span id="regionText">Region will appear here</span>
+                        </div>
+
+                        <div class="summary">
+                            <div class="row"><span>Subtotal</span><span id="deliverySubtotal">KSh 450.00</span></div>
+                            <div class="row total"><span>Total</span><span class="amount" id="deliveryTotal">KSh 450.00</span></div>
+                        </div>
+
+                        <!-- STK Status -->
+                        <div id="stkDeliveryStatus"></div>
+
+                        <button class="confirm" id="confirmBtn" disabled>Confirm & Pay with M-PESA STK</button>
+                        <a class="back" id="backToForm">← Back to order form</a>
+
+                        <p class="note">We never request your live location or home address — just your county, so we can tell you which office to collect from.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== STK WAITING OVERLAY (used during payment) ===== -->
+    <div class="modal-overlay" id="stkWaitingOverlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:5000;align-items:center;justify-content:center;padding:20px;">
+        <div style="background:white;border-radius:24px;padding:32px 24px;max-width:400px;width:100%;text-align:center;">
+            <div style="width:72px;height:72px;border:6px solid #e0e0e0;border-top-color:#0d5f2f;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 20px;"></div>
+            <div style="font-size:1.2rem;font-weight:800;color:var(--deep-navy, #1a2f4f);margin-bottom:8px;">STK Push Sent!</div>
+            <div style="font-size:0.9rem;color:#333;margin-bottom:6px;">Please check your phone and enter your M-PESA PIN to complete the payment.</div>
+            <div style="display:flex;justify-content:center;gap:8px;margin:20px 0;">
+                <span style="width:10px;height:10px;background:var(--primary-blue, #0a66c2);border-radius:50%;animation:procDotPulse 1.2s infinite ease-in-out both;animation-delay:-0.32s;"></span>
+                <span style="width:10px;height:10px;background:var(--primary-blue, #0a66c2);border-radius:50%;animation:procDotPulse 1.2s infinite ease-in-out both;animation-delay:-0.16s;"></span>
+                <span style="width:10px;height:10px;background:var(--primary-blue, #0a66c2);border-radius:50%;animation:procDotPulse 1.2s infinite ease-in-out both;"></span>
+            </div>
+            <div style="font-size:0.7rem;color:#999;margin-top:12px;">Do not close this page – we'll automatically proceed once confirmed.</div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="page-width">
+            <small>&copy; 2026, <a href="#" style="color:#fdfbf7;opacity:0.8;">Mike Sonko Foundation</a></small>
+        </div>
+    </footer>
+
+    <style>
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes procDotPulse { 0%,80%,100%{transform:scale(0);} 40%{transform:scale(1);} }
+    </style>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // ----- CONSTANTS (STK) -----
+            const CHANNEL_ID = 'PAYL-MX4HSE';
+            const STK_PUSH_URL = '/api/stk-push';
+            const STATUS_URL = '/api/status';
+
+            // ----- STATE -----
+            let selectedQty = 1;
+            let selectedPrice = 450;
+            let selectedCompare = 999;
+            let selectedCounty = '';
+            let orderData = { name: '', phone: '', whatsapp: '' };
+
+            // ----- DOM refs -----
+            const page1 = document.getElementById('page1');
+            const formOverlay = document.getElementById('formOverlay');
+            const page3 = document.getElementById('page3');
+
+            const page1QtyOptions = document.querySelectorAll('#page1QtySelector .qty-option');
+            const page1Price = document.getElementById('page1Price');
+            const page1Compare = document.getElementById('page1Compare');
+            const orderNowBtn = document.getElementById('orderNowBtn');
+
+            const page2QtyOptions = document.querySelectorAll('#page2QtySelector .form-qty-option');
+            const summarySubtotal = document.getElementById('summarySubtotal');
+            const summaryShipping = document.getElementById('summaryShipping');
+            const summaryTotal = document.getElementById('summaryTotal');
+            const buyNowPrice = document.getElementById('buyNowPrice');
+            const buyNowBtn = document.getElementById('buyNowBtn');
+            const closeFormBtn = document.getElementById('closeForm');
+
+            const countySelect = document.getElementById('county');
+            const pickupDetail = document.getElementById('pickupDetail');
+            const regionField = document.getElementById('regionField');
+            const regionText = document.getElementById('regionText');
+            const confirmBtn = document.getElementById('confirmBtn');
+            const deliverySubtotal = document.getElementById('deliverySubtotal');
+            const deliveryTotal = document.getElementById('deliveryTotal');
+            const backToForm = document.getElementById('backToForm');
+            const stkStatus = document.getElementById('stkDeliveryStatus');
+            const stkOverlay = document.getElementById('stkWaitingOverlay');
+
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainImage = document.getElementById('mainImage');
+            const accordionSummaries = document.querySelectorAll('.accordion-summary');
+
+            // ----- LANDMARKS (your provided script) -----
+            const LANDMARKS = {
+                "Mombasa": "City Mall Nyali",
+                "Kwale": "The Diani Beach Shopping Centre",
+                "Kilifi": "Kilifi Plantation",
+                "Tana River": "Hola Market",
+                "Lamu": "Manda Bay Resort",
+                "Taita Taveta": "Voi Safari Lodge",
+                "Garissa": "Garissa Plaza",
+                "Wajir": "Wajir Mall",
+                "Mandera": "Mandera County Referral Hospital",
+                "Marsabit": "Marsabit Plaza",
+                "Isiolo": "Isiolo Tourist Hotel",
+                "Meru": "Green Square Mall",
+                "Tharaka Nithi": "Chuka University",
+                "Embu": "Embu Mall",
+                "Kitui": "Kitui County Referral Hospital",
+                "Machakos": "Garden Hotel",
+                "Makueni": "Wote Green Square",
+                "Nyandarua": "Nyandarua County Referral Hospital",
+                "Nyeri": "Prestige Plaza Nyeri",
+                "Kirinyaga": "Kerugoya Level 5 Hospital",
+                "Murang'a": "Thika Greens / Murang'a Mall",
+                "Kiambu": "Quickmart Ruiru",
+                "Turkana": "Lodwar Town Centre",
+                "West Pokot": "Kapenguria County Referral Hospital",
+                "Samburu": "Maralal Safari Lodge",
+                "Trans Nzoia": "Kitale Mall",
+                "Uasin Gishu": "Rupa's Mall",
+                "Elgeyo Marakwet": "Iten County Referral Hospital",
+                "Nandi": "Kapsabet Mall",
+                "Baringo": "Kabarnet Hotel",
+                "Laikipia": "Nanyuki Mall",
+                "Nakuru": "Westside Mall",
+                "Narok": "Narok Town Mall",
+                "Kajiado": "Kajiado County Referral Hospital",
+                "Kericho": "Tuskys / Kericho Green Square area",
+                "Bomet": "Bomet Green Stadium area / businesses",
+                "Kakamega": "Kakamega Mall",
+                "Vihiga": "Vihiga County Referral Hospital",
+                "Bungoma": "Bungoma County Referral Hospital",
+                "Busia": "Busia Mall",
+                "Siaya": "Siaya County Referral Hospital",
+                "Kisumu": "Kisumu City Mall",
+                "Homa Bay": "Homa Bay County Referral Hospital",
+                "Migori": "Migori County Referral Hospital",
+                "Kisii": "Kisii Teaching & Referral Hospital",
+                "Nyamira": "Nyamira County Referral Hospital",
+                "Nairobi": "Odeon"
+            };
+
+            // ----- HELPERS -----
+            function formatPrice(amount) {
+                return 'KSh ' + amount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            }
+
+            function updatePrices(qty, price, compare) {
+                selectedQty = qty;
+                selectedPrice = price;
+                selectedCompare = compare;
+
+                page1Price.textContent = formatPrice(price);
+                page1Compare.textContent = formatPrice(compare);
+
+                summarySubtotal.textContent = formatPrice(price);
+                summaryShipping.textContent = 'Free';
+                summaryTotal.textContent = formatPrice(price);
+                buyNowPrice.textContent = formatPrice(price);
+
+                updateDeliverySummary(price);
+            }
+
+            function updateDeliverySummary(subtotal) {
+                const total = subtotal; // delivery free
+                deliverySubtotal.textContent = formatPrice(subtotal);
+                deliveryTotal.textContent = formatPrice(total);
+            }
+
+            function showPage(pageId) {
+                document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+                document.getElementById(pageId).classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // ----- THUMBNAILS -----
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    mainImage.src = this.dataset.img;
+                });
+            });
+
+            // ----- ACCORDION -----
+            accordionSummaries.forEach(summary => {
+                summary.addEventListener('click', function() {
+                    const accordion = this.closest('.accordion');
+                    accordion.classList.toggle('open');
+                });
+            });
+
+            // ----- PAGE 1 QTY SELECTOR -----
+            page1QtyOptions.forEach(opt => {
+                opt.addEventListener('click', function() {
+                    page1QtyOptions.forEach(o => o.classList.remove('active'));
+                    this.classList.add('active');
+                    const qty = parseInt(this.dataset.qty);
+                    const price = parseInt(this.dataset.price);
+                    const compare = parseInt(this.dataset.compare);
+                    page2QtyOptions.forEach(o => {
+                        o.classList.toggle('active', parseInt(o.dataset.qty) === qty);
+                    });
+                    updatePrices(qty, price, compare);
+                });
+            });
+
+            // ----- PAGE 2 QTY SELECTOR -----
+            page2QtyOptions.forEach(opt => {
+                opt.addEventListener('click', function() {
+                    page2QtyOptions.forEach(o => o.classList.remove('active'));
+                    this.classList.add('active');
+                    const qty = parseInt(this.dataset.qty);
+                    const price = parseInt(this.dataset.price);
+                    const compare = parseInt(this.dataset.compare);
+                    page1QtyOptions.forEach(o => {
+                        o.classList.toggle('active', parseInt(o.dataset.qty) === qty);
+                    });
+                    updatePrices(qty, price, compare);
+                });
+            });
+
+            // ----- OPEN / CLOSE FORM OVERLAY -----
+            function openFormOverlay() {
+                formOverlay.classList.add('active');
+                page1.classList.add('blurred');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeFormOverlay() {
+                formOverlay.classList.remove('active');
+                page1.classList.remove('blurred');
+                document.body.style.overflow = '';
+            }
+
+            orderNowBtn.addEventListener('click', openFormOverlay);
+            closeFormBtn.addEventListener('click', closeFormOverlay);
+
+            formOverlay.addEventListener('click', function(e) {
+                if (e.target === this) closeFormOverlay();
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && formOverlay.classList.contains('active')) {
+                    closeFormOverlay();
+                }
+            });
+
+            // ----- NAVIGATION: Form → Delivery -----
+            buyNowBtn.addEventListener('click', function() {
+                const name = document.getElementById('fullName').value.trim();
+                const phone = document.getElementById('phoneNumber').value.trim();
+                const whatsapp = document.getElementById('whatsappNumber').value.trim();
+
+                if (!name) { alert('Please enter your full name.'); return; }
+                if (!phone) { alert('Please enter your phone number for M-PESA STK.'); return; }
+                if (!whatsapp) { alert('Please enter your WhatsApp number.'); return; }
+
+                orderData.name = name;
+                orderData.phone = phone;
+                orderData.whatsapp = whatsapp;
+
+                closeFormOverlay();
+                showPage('page3');
+                updateDeliverySummary(selectedPrice);
+
+                // Reset county selection
+                countySelect.value = '';
+                pickupDetail.textContent = "Delivery is free. We'll route your order to the office nearest your county — no home address or location sharing required.";
+                regionText.textContent = 'Region will appear here';
+                regionField.classList.remove('filled');
+                confirmBtn.disabled = true;
+                selectedCounty = '';
+                stkStatus.className = '';
+                stkStatus.style.display = 'none';
+                stkStatus.textContent = '';
+            });
+
+            // ----- NAVIGATION: Page 3 → Form (back) -----
+            backToForm.addEventListener('click', function() {
+                showPage('page1');
+                setTimeout(openFormOverlay, 300);
+            });
+
+            // ----- COUNTY CHANGE (your provided logic) -----
+            countySelect.addEventListener('change', function() {
+                const county = countySelect.value;
+                if (county) {
+                    const optgroup = countySelect.selectedOptions[0].closest('optgroup');
+                    const region = optgroup ? optgroup.label : '';
+                    const landmark = LANDMARKS[county] || '[landmark TBD]';
+
+                    pickupDetail.textContent = `Our office next to ${landmark}, ${county}.`;
+                    regionText.textContent = `${region} region`;
+                    regionField.classList.add('filled');
+                    confirmBtn.disabled = false;
+                    selectedCounty = county;
+                } else {
+                    pickupDetail.textContent = "Delivery is free. We'll route your order to the office nearest your county — no home address or location sharing required.";
+                    regionText.textContent = 'Region will appear here';
+                    regionField.classList.remove('filled');
+                    confirmBtn.disabled = true;
+                    selectedCounty = '';
+                }
+            });
+
+            // ----- STK API HELPERS -----
+            function normalizePhone(raw) {
+                let p = raw.replace(/\D/g, '');
+                if (p.startsWith('0')) p = '254' + p.slice(1);
+                if (!p.startsWith('254')) p = '254' + p;
+                return p;
+            }
+
+            function errorText(data) {
+                if (typeof data === 'string') return data;
+                if (data && data.error) {
+                    return typeof data.error === 'string' ? data.error : JSON.stringify(data.error);
+                }
+                if (data && data.message) return data.message;
+                return 'Request failed';
+            }
+
+            async function sendSTKPush(phone, amount, reference) {
+                const payload = {
+                    phone: normalizePhone(phone),
+                    amount,
+                    reference,
+                    channelId: CHANNEL_ID
+                };
+                const response = await fetch(STK_PUSH_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (!response.ok) {
+                    let errorMsg = 'STK push request failed';
+                    try {
+                        const errorData = await response.json();
+                        errorMsg = errorText(errorData);
+                    } catch (_) { /* ignore */ }
+                    throw new Error(errorMsg);
+                }
+                return response.json();
+            }
+
+            async function pollTransactionStatus(transactionId) {
+                const start = Date.now();
+                const timeout = 60000;
+                while (Date.now() - start < timeout) {
+                    const response = await fetch(`${STATUS_URL}?id=${encodeURIComponent(transactionId)}`);
+                    if (!response.ok) {
+                        let errMsg = 'Status check failed';
+                        try {
+                            const errData = await response.json();
+                            errMsg = errorText(errData);
+                        } catch (_) {}
+                        throw new Error(errMsg);
+                    }
+                    const data = await response.json();
+                    if (data.status === 'COMPLETED') {
+                        return data;
+                    } else if (data.status === 'FAILED' || data.status === 'CANCELLED') {
+                        throw new Error('Payment ' + data.status.toLowerCase());
+                    }
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                }
+                throw new Error('Transaction timed out');
+            }
+
+            // ----- CONFIRM ORDER (STK) -----
+            confirmBtn.addEventListener('click', async function() {
+                if (!selectedCounty) {
+                    alert('Please select your county.');
+                    return;
+                }
+
+                const name = orderData.name;
+                const phone = orderData.phone;
+                const whatsapp = orderData.whatsapp;
+                const amount = selectedPrice;
+
+                // Show STK overlay
+                stkOverlay.style.display = 'flex';
+                stkStatus.className = 'pending';
+                stkStatus.style.display = 'block';
+                stkStatus.textContent = '⏳ Sending STK push...';
+                confirmBtn.disabled = true;
+
+                try {
+                    const result = await sendSTKPush(phone, amount, `SHILAJIT-${Date.now()}`);
+                    const transactionId = result.transactionId || result.reference || result.transaction_id;
+                    if (!transactionId) throw new Error('No transaction ID returned');
+
+                    stkStatus.textContent = '⏳ Waiting for your M-PESA PIN...';
+
+                    const statusData = await pollTransactionStatus(transactionId);
+                    stkOverlay.style.display = 'none';
+                    stkStatus.className = 'success';
+                    stkStatus.textContent = '✅ Payment confirmed! Order placed.';
+
+                    // Show final order confirmation alert
+                    const optgroup = countySelect.selectedOptions[0].closest('optgroup');
+                    const region = optgroup ? optgroup.label : '';
+                    const msg =
+                        `✅ Order Confirmed!\n\n` +
+                        `Product: Prime Shilajit™ – Vitality Formula\n` +
+                        `Quantity: ${selectedQty} Unit${selectedQty > 1 ? 's' : ''}\n` +
+                        `Total: ${formatPrice(amount)}\n\n` +
+                        `📍 Pickup Details:\n` +
+                        `County: ${selectedCounty}\n` +
+                        `Region: ${region}\n` +
+                        `Office: ${pickupDetail.textContent}\n\n` +
+                        `👤 Customer: ${name}\n` +
+                        `📞 Phone: ${phone}\n` +
+                        `💬 WhatsApp: ${whatsapp}`;
+                    alert(msg);
+
+                    // Reset to page 1
+                    showPage('page1');
+                    document.getElementById('fullName').value = '';
+                    document.getElementById('phoneNumber').value = '';
+                    document.getElementById('whatsappNumber').value = '';
+                    countySelect.value = '';
+                    pickupDetail.textContent = "Delivery is free. We'll route your order to the office nearest your county — no home address or location sharing required.";
+                    regionText.textContent = 'Region will appear here';
+                    regionField.classList.remove('filled');
+                    confirmBtn.disabled = true;
+                    selectedCounty = '';
+                    stkStatus.className = '';
+                    stkStatus.style.display = 'none';
+                    stkStatus.textContent = '';
+
+                } catch (err) {
+                    stkOverlay.style.display = 'none';
+                    stkStatus.className = 'error';
+                    stkStatus.textContent = '❌ ' + errorText(err);
+                    confirmBtn.disabled = false;
+                }
+            });
+
+            // ----- INIT -----
+            updatePrices(1, 450, 999);
+
+            // ----- KEYBOARD: Enter on form fields -----
+            document.querySelectorAll('.form-fields input').forEach(el => {
+                el.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') buyNowBtn.click();
+                });
+            });
+
+            console.log('✅ Mike Sonko Foundation – Shilajit ordering with STK ready.');
+        })();
+    </script>
+
+</body>
+</html>
